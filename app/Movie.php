@@ -17,7 +17,7 @@ class Movie extends Model
     //One movie has many pictures
     public function pictures()
     {
-        return $this->hasMany(Picture::class);
+        return $this->hasOne(Picture::class);
     }
 
     //One movie belongs to many genres
