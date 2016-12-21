@@ -35,6 +35,6 @@ class Movie extends Model
     //One movie belongs to many actors
     public function actors()
     {
-        return $this->belongsToMany(Actor::class);
+        return $this->belongsToMany(Actor::class)->withPivot('plays');
     }
 }
