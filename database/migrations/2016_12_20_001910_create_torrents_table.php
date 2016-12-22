@@ -21,7 +21,7 @@ class CreateTorrentsTable extends Migration
             $table->string('audio');
             $table->string('length');
             $table->string('fps');
-            $table->string('p/s');
+            $table->string('peer_seed');
             $table->string('pg');
             $table->timestamps();
         });
