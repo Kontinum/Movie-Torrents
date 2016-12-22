@@ -23,7 +23,7 @@ class Movie extends Model
     //One movie belongs to many genres
     public function genres()
     {
-        return $this->belongsToMany(Genre::class);
+        return $this->belongsToMany(Genre::class)->withTimestamps();
     }
 
     //One movie has many comments
@@ -35,6 +35,6 @@ class Movie extends Model
     //One movie belongs to many actors
     public function actors()
     {
-        return $this->belongsToMany(Actor::class)->withPivot('plays');
+        return $this->belongsToMany(Actor::class)->withPivot('plays')->withTimestamps();
     }
 }
