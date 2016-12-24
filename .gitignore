@@ -6,3 +6,8 @@
 Homestead.json
 Homestead.yaml
 .env
+*.jpg
+*.jpeg
+*.png
+*.ttf
+*.woff
