@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
 
     <!-- Scripts -->
     <script>
@@ -83,5 +84,6 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    <script src="https://use.fontawesome.com/31274ff3ad.js"></script>
 </body>
 </html>
