@@ -1,0 +1,95 @@
+@font-face {
+    font-family: brandFont;
+    src: url(../fonts/MovieTimes.ttf);
+}
+
+.navbar {
+    margin-bottom: 0px;
+}
+
+.navbar-default .navbar-brand{
+    font-size: 30px;
+    color: black;
+    font-family: brandFont;
+}
+
+.jumbotron{
+    margin-bottom: 0;
+    background-color: #fff;
+}
+
+section{
+    padding:20px;
+}
+
+.movie{
+    width: 230px;
+    background-color: white;
+    box-shadow: 0px 0px 10px red;
+    float: left;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.movie:hover{
+    box-shadow: 0px 0px 20px red;
+}
+
+.movie-bottom{
+    position: relative;
+}
+
+.movie-link-name:link, .movie-link-name:active{
+    font-size: 20px;
+    margin-left: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.movie-link-name:hover{
+    text-decoration: none;
+}
+
+.movie-year{
+    margin-top: -4px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.movie-link-download{
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+}
+
+.image-list{
+    max-height: 360px;
+}
+
+figure{
+    position: relative;
+    max-width: 230px;
+}
+
+figcaption{
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+figcaption h4{
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+    color: #ffffff;
+}
+
+figure:hover figcaption{
+    opacity: 1;
+}
+
