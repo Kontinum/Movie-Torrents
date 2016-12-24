@@ -32,4 +32,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Comment::class);
     }
+
+    //One user belongs to many roles
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
+    }
 }
