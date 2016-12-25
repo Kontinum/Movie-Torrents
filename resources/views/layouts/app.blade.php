@@ -56,6 +56,7 @@
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    <img style="width:40px;height:40px;border-radius: 50%" src="/images/users/{{Auth::user()->profile_picture}}" alt="">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
@@ -64,7 +65,7 @@
                                         <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Logout
+                                            <i class="fa fa-lg fa-sign-out" aria-hidden="true"></i>Logout
                                         </a>
 
                                         <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
