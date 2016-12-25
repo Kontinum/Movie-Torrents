@@ -97,3 +97,13 @@ figure:hover figcaption{
     opacity: 1;
 }
 
+.footer{
+    height: 40px;
+}
+
+.footer p{
+    padding-top: 20px;
+    font-weight: bold;
+    border-top: 1px solid #d3e0e9;
+}
+
