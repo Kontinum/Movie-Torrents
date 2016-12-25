@@ -11,7 +11,7 @@
     <section class="popular-movies-section">
         <div class="container">
             <div class="row">
-                <h2>Popular movies</h2>
+                <h2><i class="fa fa-film" aria-hidden="true"></i>Popular movies</h2>
                 <hr>
             </div>
             <div class="row">
@@ -40,10 +40,10 @@
             </div>
         </div>
     </section>
-    <section class="new-movies-section">
+    <section style="background-color: aliceblue" class="new-movies-section">
         <div class="container">
             <div class="row">
-                <h2>New Movies</h2>
+                <h2><i class="fa fa-film" aria-hidden="true"></i>New Movies</h2>
                 <hr>
             </div>
             <div class="row">
