@@ -83,6 +83,14 @@
         @yield('content')
     </div>
 
+
+        <div class="row">
+            <div class="footer text-center">
+                <p>&copy; MovieTorrents {{date('Y')}}.</p>
+            </div>
+        </div>
+
+
     <!-- Scripts -->
     <script src="/js/app.js"></script>
     <script src="https://use.fontawesome.com/31274ff3ad.js"></script>
