@@ -22,6 +22,10 @@ section{
     padding:20px;
 }
 
+section i{
+    color: #3097D1 !important;
+}
+
 .movie{
     width: 230px;
     background-color: white;
