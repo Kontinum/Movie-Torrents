@@ -20,4 +20,23 @@ class AdminPagesController extends Controller
 
         return view('genres')->with('genres',$genres);
     }
+
+    //Add new genre
+    public function postGenre(Request $request)
+    {
+        $this->validate($request, [
+            'genre'=>'required|min:3|max:11|alpha'
+        ]);
+
+        $genre = Genre::where('name',$request['genre'])->first();
+        if($genre){
+            return redirect()->route('getGenres')->with(['fail'=>'Genre is already in database']);
+        }
+
+        $genre = new Genre();
+        $genre->name = $request['genre'];
+        $genre->save();
+
+        return redirect()->route('getGenres')->with(['success'=>'Genre successfully added']);
+    }
 }
