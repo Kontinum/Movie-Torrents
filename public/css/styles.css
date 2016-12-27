@@ -115,3 +115,7 @@ figure:hover figcaption{
     font-weight: bold;
 }
 
+.panel-default {
+    margin-top: 10px;
+}
+
