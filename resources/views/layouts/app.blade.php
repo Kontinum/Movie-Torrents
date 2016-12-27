@@ -61,6 +61,15 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+                                    <li><a href=""><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
+                                    @foreach(Auth::user()->roles as $role)
+                                        @if($role)
+                                            <li><a href="#"><i class="fa fa-users" aria-hidden="true"></i> Users</a></li>
+                                            <li><a href="#"><i class="fa fa-film" aria-hidden="true"></i> Movies</a></li>
+                                            <li><a href="#"><i class="fa fa-user-circle" aria-hidden="true"></i> Actors</a></li>
+                                            <li><a href="#"><i class="fa fa-video-camera" aria-hidden="true"></i> Genres</a></li>
+                                        @endif
+                                    @endforeach
                                     <li>
                                         <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();
