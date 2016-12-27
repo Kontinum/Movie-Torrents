@@ -83,12 +83,14 @@
         @yield('content')
     </div>
 
-
-        <div class="row">
+        <div class="container-fluid">
+            <div class="row">
             <div class="footer text-center">
                 <p>&copy; MovieTorrents {{date('Y')}}.</p>
             </div>
-        </div>
+            </div>
+            </div>
+
 
 
     <!-- Scripts -->
