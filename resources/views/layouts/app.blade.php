@@ -13,6 +13,7 @@
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/errors.css">
 
     <!-- Scripts -->
     <script>
@@ -91,6 +92,8 @@
 
         @yield('content')
     </div>
+
+    @include('/partials/errors.php')
 
     <div class="container-fluid">
         <div class="row">
