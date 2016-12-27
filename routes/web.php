@@ -22,6 +22,9 @@ Route::group(
     ['prefix'=>'admin','middleware'=>'auth'],function(){
     //Allows admin to add genre, see all genres, edit or delete them
     Route::get('/genres','AdminPagesController@getGenres')->name('getGenres');
+
+    //Allows admin to add new genre
+    Route::post('/genres','AdminPagesController@postGenres')->name('postGenres');
 }
 );
 
