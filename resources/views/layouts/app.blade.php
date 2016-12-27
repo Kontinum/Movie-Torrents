@@ -93,7 +93,7 @@
         @yield('content')
     </div>
 
-    @include('/partials/errors.php')
+    @include('/errors/errorsinfo')
 
     <div class="container-fluid">
         <div class="row">
