@@ -24,7 +24,7 @@ Route::group(
     Route::get('/genres','AdminPagesController@getGenres')->name('getGenres');
 
     //Allows admin to add new genre
-    Route::post('/genres','AdminPagesController@postGenres')->name('postGenres');
+    Route::post('/genres','AdminPagesController@postGenre')->name('postGenre');
 }
 );
 
