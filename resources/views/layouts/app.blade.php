@@ -64,7 +64,7 @@
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href=""><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
                                     @foreach(Auth::user()->roles as $role)
-                                        @if($role)
+                                        @if($role->name == 'admin')
                                             <li><a href="#"><i class="fa fa-users" aria-hidden="true"></i> Users</a></li>
                                             <li><a href="#"><i class="fa fa-film" aria-hidden="true"></i> Movies</a></li>
                                             <li><a href="#"><i class="fa fa-user-circle" aria-hidden="true"></i> Actors</a></li>
