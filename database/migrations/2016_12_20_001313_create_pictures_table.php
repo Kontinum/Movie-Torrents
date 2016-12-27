@@ -16,6 +16,7 @@ class CreatePicturesTable extends Migration
         Schema::create('pictures', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('movie_id')->unsigned();
+            $table->string('poster_picture_path');
             $table->string('picture1_path');
             $table->string('picture2_path');
             $table->timestamps();
