@@ -17,3 +17,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
+//Admin routes
+Route::group(
+    ['prefix'=>'admin','middleware'=>'auth'],function(){
+    //Allows admin to add genre, see all genres, edit or delete them
+    Route::get('/genres','AdminPagesController@getGenres')->name('getGenres');
+}
+);
+
