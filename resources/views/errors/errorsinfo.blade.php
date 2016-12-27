@@ -1,15 +1,17 @@
 @if(count($errors) > 0)
     @foreach($errors->all() as $error)
-        <li>{{$error}}</li>
+        <div class="info-box fail">
+           <li>{{$error}}</li>
+        </div>
     @endforeach
 @endif
 @if(Session::has('success'))
-    <div class="success">
-        {{Session::get('success')}}
+    <div class="info-box success">
+        <li>{{Session::get('success')}}</li>
     </div>
 @endif
 @if(Session::has('fail'))
-    <div class="fail">
-        {{Session::get('fail')}}
+    <div class="info-box fail">
+        <li>{{Session::get('fail')}}</li>
     </div>
 @endif
