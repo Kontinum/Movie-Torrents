@@ -89,11 +89,10 @@
                 </div>
             </div>
         </nav>
-
+        @include('/errors/errorsinfo')
         @yield('content')
     </div>
 
-    @include('/errors/errorsinfo')
 
     <div class="container-fluid">
         <div class="row">
