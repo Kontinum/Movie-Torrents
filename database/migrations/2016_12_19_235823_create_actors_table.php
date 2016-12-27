@@ -17,7 +17,7 @@ class CreateActorsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('birth_year');
-            $table->string('thumbnail_path')->default('actor_default.jpg');
+            $table->string('thumbnail_path')->default('actor_default.png');
             $table->timestamps();
         });
     }
