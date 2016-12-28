@@ -37,16 +37,25 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <h2>List of genres:</h2>
-            <hr>
-            @if(count($genres) == 0)
-                <p>The are no genres in database</p>
-                @else
-                @foreach($genres as $genre)
-                    {{$genre->name}}
-                @endforeach
-            @endif
-        </div>
     </div>
+    <section style="background-color: aliceblue;">
+        <div class="container">
+            <div class="row">
+                <h2>List of genres:</h2>
+                <hr>
+                <ul class="list-group col-md-8 col-md-offset-2">
+                @if(count($genres) == 0)
+                    <p>The are no genres in database</p>
+                @else
+                    @foreach($genres as $genre)
+                        <li class="list-group-item">{{$genre->name}}
+                            <a class="pull-right" href="{{route('deleteGenre',['genre_id'=>$genre->id])}}" title="Delete genre"><i class="fa fa-lg fa-trash list-icons" aria-hidden="true"></i></a>
+                            <a class="pull-right" href="" title="Edit genre"><i class="fa fa-lg fa-pencil-square-o list-icons" aria-hidden="true"></i></a>
+                            </li>
+                    @endforeach
+                @endif
+                </ul>
+            </div>
+        </div>
+    </section>
 @endsection
