@@ -30,14 +30,14 @@ class AdminPagesController extends Controller
 
         $genre = Genre::where('name',$request['genre'])->first();
         if($genre){
-            return redirect()->route('getGenres')->with(['fail'=>'Genre is already in database']);
+            return redirect()->route('getGenres')->with(['fail'=>'Genre '.$genre->name.' is already in database']);
         }
 
         $genre = new Genre();
         $genre->name = $request['genre'];
         $genre->save();
 
-        return redirect()->route('getGenres')->with(['success'=>'Genre successfully added']);
+        return redirect()->route('getGenres')->with(['success'=>'Genre '.$request["genre"].' successfully added']);
     }
 
     //Delete genre
