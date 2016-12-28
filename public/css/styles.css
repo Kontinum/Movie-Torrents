@@ -119,3 +119,11 @@ figure:hover figcaption{
     margin-top: 10px;
 }
 
+.list-group .list-group-item{
+    font-weight: bold;
+}
+
+.list-icons{
+    margin-right: 5px;
+}
+
