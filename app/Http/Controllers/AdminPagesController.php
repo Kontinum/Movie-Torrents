@@ -39,4 +39,17 @@ class AdminPagesController extends Controller
 
         return redirect()->route('getGenres')->with(['success'=>'Genre successfully added']);
     }
+
+    //Delete genre
+    public function deleteGenre($genre_id)
+    {
+       $genre = Genre::find($genre_id);
+
+        if(!$genre){
+            return redirect()->route('getGenres')->with(['fail'=>'That genre s not in database']);
+        }
+
+        $genre->delete();
+        return redirect()->route('getGenres')->with(['success'=>'Genre '.$genre->name.' successfully deleted']);
+    }
 }
