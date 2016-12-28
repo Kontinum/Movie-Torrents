@@ -25,6 +25,9 @@ Route::group(
 
     //Allows admin to add new genre
     Route::post('/genres','AdminPagesController@postGenre')->name('postGenre');
+
+    //Delete genre
+    Route::get('/genre/{genre_id}/delete','AdminPagesController@deleteGenre')->name('deleteGenre');
 }
 );
 
