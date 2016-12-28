@@ -105,5 +105,7 @@
     <!-- Scripts -->
     <script src="/js/app.js"></script>
     <script src="https://use.fontawesome.com/31274ff3ad.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="/js/scripts.js"></script>
 </body>
 </html>
