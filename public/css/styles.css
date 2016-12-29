@@ -127,3 +127,12 @@ figure:hover figcaption{
     margin-right: 5px;
 }
 
+.genre-edit{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.genre-edit .btn-primary{
+    margin-top: -3px;
+}
+
