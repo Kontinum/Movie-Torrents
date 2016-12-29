@@ -53,8 +53,9 @@
                             <i title="Edit genre" style="line-height: 25px;cursor: pointer" class="fa fa-lg fa-pencil-square-o list-icons pull-right" aria-hidden="true"></i>
                             <div class="col-md-8 col-md-offset-2 genre-edit">
                                 <form action="{{route('postEditGenre',['genre_id'=>$genre->id])}}" method="post">
+                                    {{csrf_field()}}
                                     <input type="text" name="genre" value="{{$genre->name}}" />
-                                    <input type="button" class="btn btn-primary btn-sm" value="Edit genre" />
+                                    <input type="submit" class="btn btn-primary btn-sm" value="Edit genre" />
                                 </form>
                             </div>
                             </li>
