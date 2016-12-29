@@ -2,12 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Actor;
 use App\Genre;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class AdminPagesController extends Controller
 {
+    //Return all actors order by name
+    public function getActors()
+    {
+        $actors = Actor::orderBy('name','ASC')->get();
+
+        return view('actors')->with('actors',$actors);
+    }
+
     //Return all genres order by name
     public function getGenres()
     {
