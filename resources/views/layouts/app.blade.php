@@ -67,7 +67,7 @@
                                         @if($role->name == 'admin')
                                             <li><a href="#"><i class="fa fa-users" aria-hidden="true"></i> Users</a></li>
                                             <li><a href="#"><i class="fa fa-film" aria-hidden="true"></i> Movies</a></li>
-                                            <li><a href="#"><i class="fa fa-user-circle" aria-hidden="true"></i> Actors</a></li>
+                                            <li><a href="{{route('getActors')}}"><i class="fa fa-user-circle" aria-hidden="true"></i> Actors</a></li>
                                             <li><a href="{{route('getGenres')}}"><i class="fa fa-video-camera" aria-hidden="true"></i> Genres</a></li>
                                         @endif
                                     @endforeach
