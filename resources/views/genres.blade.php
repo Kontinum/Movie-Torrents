@@ -50,7 +50,7 @@
                     @foreach($genres as $genre)
                         <li class="list-group-item">{{$genre->name}}
                             <a class="pull-right" href="{{route('deleteGenre',['genre_id'=>$genre->id])}}" title="Delete genre"><i class="fa fa-lg fa-trash list-icons" aria-hidden="true"></i></a>
-                            <i class="fa fa-lg fa-pencil-square-o list-icons edit-genre-icon pull-right" aria-hidden="true"></i>
+                            <i title="Edit genre" style="line-height: 25px;cursor: pointer" class="fa fa-lg fa-pencil-square-o list-icons pull-right" aria-hidden="true"></i>
                             <div class="col-md-8 col-md-offset-2 genre-edit">
                                 <form action="{{route('postEditGenre',['genre_id'=>$genre->id])}}" method="post">
                                     <input type="text" name="genre" value="{{$genre->name}}" />
