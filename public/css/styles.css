@@ -130,6 +130,8 @@ figure:hover figcaption{
 .genre-edit{
     padding-top: 10px;
     padding-bottom: 10px;
+    float: inherit;
+    margin-left: 0px;
 }
 
 .genre-edit .btn-primary{
