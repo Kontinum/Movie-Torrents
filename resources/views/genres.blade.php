@@ -16,9 +16,9 @@
                                 <div class="col-md-6">
                                     <input id="genre" type="text" class="form-control" name="genre" value="{{ old('genre') }}" required autofocus>
 
-                                    @if ($errors->has('email'))
+                                    @if ($errors->has('genre'))
                                         <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors->first('genre') }}</strong>
                                     </span>
                                     @endif
                                 </div>
@@ -48,7 +48,7 @@
                     <p>The are no genres in database</p>
                 @else
                     @foreach($genres as $genre)
-                        <li class="list-group-item">{{$genre->name}}
+                        <li class="genre-list list-group-item">{{$genre->name}}
                             <a class="pull-right" href="{{route('deleteGenre',['genre_id'=>$genre->id])}}" title="Delete genre"><i class="fa fa-lg fa-trash list-icons" aria-hidden="true"></i></a>
                             <i title="Edit genre" style="line-height: 25px;cursor: pointer" class="fa fa-lg fa-pencil-square-o list-icons pull-right" aria-hidden="true"></i>
                             <div class="col-md-8 col-md-offset-2 genre-edit">
