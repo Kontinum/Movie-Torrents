@@ -25,7 +25,7 @@ class AdminPagesController extends Controller
     public function postGenre(Request $request)
     {
         $this->validate($request, [
-            'genre'=>'required|min:3|max:11|alpha'
+            'genre'=>'required|min:3|max:11|alpha_dash'
         ]);
 
         $genre = Genre::where('name',$request['genre'])->first();
@@ -51,5 +51,23 @@ class AdminPagesController extends Controller
 
         $genre->delete();
         return redirect()->route('getGenres')->with(['success'=>'Genre '.$genre->name.' successfully deleted']);
+    }
+
+    public function postEditGenre(Request $request, $genre_id)
+    {
+        $this->validate($request, [
+            'genre'=>'required|min:3|max:11|alpha_dash'
+        ]);
+
+        $genre = Genre::find($genre_id);
+
+        if(!$genre){
+            return redirect()->route('getGenres')->with(['fail'=>'Genre '.$request['genre'].' is not in database']);
+        }
+
+        $genre->name = $request['genre'];
+        $genre->save();
+
+        return redirect()->route('getGenres')->with(['success'=>'Genre '.$request['genre'].' successfully edited']);
     }
 }
