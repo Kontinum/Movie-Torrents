@@ -20,6 +20,10 @@ Auth::routes();
 //Admin routes
 Route::group(
     ['prefix'=>'admin','middleware'=>'auth'],function(){
+
+    //Alows admin to see all actors, edit, or delete them
+    Route::get('/actors','AdminPagesController@getActors')->name('getActors');
+
     //Allows admin to add genre, see all genres, edit or delete them
     Route::get('/genres','AdminPagesController@getGenres')->name('getGenres');
 
