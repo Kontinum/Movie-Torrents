@@ -24,6 +24,9 @@ Route::group(
     //Alows admin to see all actors, edit, or delete them
     Route::get('/actors','AdminPagesController@getActors')->name('getActors');
 
+    //Add new actor
+    Route::post('/actors','AdminPagesController@postActor')->name('postActor');
+
     //Allows admin to add genre, see all genres, edit or delete them
     Route::get('/genres','AdminPagesController@getGenres')->name('getGenres');
 
