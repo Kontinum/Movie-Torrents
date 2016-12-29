@@ -7,7 +7,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Add Actor</div>
                     <div class="panel-body">
-                        <form class="form-horizontal" role="form" method="POST" action="{{ route('postActor') }}">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ route('postActor') }}" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
                             <div class="form-group{{ $errors->has('actor') ? ' has-error' : '' }}">
@@ -36,6 +36,12 @@
                                 </div>
                             </div>
 
+                            <div class="form-group {{$errors->has('actor_image') ? 'has-error' : ''}}">
+                                <label for="actor_image" class="col-md-4 control-label">Actor image(256x256):</label>
+                                <div class="col-md-6">
+                                    <input id="actor_image" type="file" class="form-control" name="actor_image" value="{{old('actor_image')}}" autofocus>
+                                </div>
+                            </div>
 
                             <div class="form-group">
                                 <div class="col-md-8 col-md-offset-4">
