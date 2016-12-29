@@ -25,7 +25,7 @@ class AdminPagesController extends Controller
     public function postGenre(Request $request)
     {
         $this->validate($request, [
-            'genre'=>'required|min:3|max:11|alpha'
+            'genre'=>'required|min:3|max:11|regex:/^[(a-zA-Z\-)]+$/u'
         ]);
 
         $genre = Genre::where('name',$request['genre'])->first();
@@ -56,7 +56,7 @@ class AdminPagesController extends Controller
     public function postEditGenre(Request $request, $genre_id)
     {
         $this->validate($request, [
-            'genre'=>'required|min:3|max:11|alpha_dash'
+            'genre'=>'required|min:3|max:11|regex:/^[(a-zA-Z\-)]+$/u'
         ]);
 
         $genre = Genre::find($genre_id);
