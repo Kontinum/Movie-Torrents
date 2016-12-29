@@ -12,4 +12,18 @@ $('document').ready(function(){
             $('.genre-list:nth-child('+ value +') .genre-edit').slideToggle()
         });
     })
+
+    $('.actor-edit').hide();
+
+    var brojGlumaca = $('.actor-list').length;
+    var nizGlumaca = [];
+    for (brojGlumaca;brojGlumaca>0;brojGlumaca--){
+        nizGlumaca.push(brojGlumaca);
+    }
+
+    $.each(nizGlumaca,function(index , value){
+        $('.actor-list:nth-child('+ value +') .fa-pencil-square-o').click(function(){
+            $('.actor-list:nth-child('+ value +') .actor-edit').slideToggle()
+        });
+    })
 });
