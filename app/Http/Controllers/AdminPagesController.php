@@ -25,7 +25,7 @@ class AdminPagesController extends Controller
     public function postGenre(Request $request)
     {
         $this->validate($request, [
-            'genre'=>'required|min:3|max:11|alpha_dash'
+            'genre'=>'required|min:3|max:11|alpha'
         ]);
 
         $genre = Genre::where('name',$request['genre'])->first();
