@@ -50,17 +50,10 @@
                         @foreach($actors as $actor)
 
                             <li style="float: left" class="actor-list list-group-item col-md-4 col-sm-6 col-xs-12">
-                                <img style="width: 40px;height: 40px;border-radius: 50%" src="/images/actors/{{$actor->thumbnail_path}}" alt="">
+                                <img style="width: 40px;height: 40px;border-radius: 50%" src="/images/actors/{{$actor->thumbnail_path}}" alt="{{$actor->name}} image">
                                 {{$actor->name}}
-                                <a class="pull-right" href="#" title="Delete actor"><i class="fa fa-lg fa-trash list-icons" aria-hidden="true"></i></a>
-                                <i title="Edit actor" style="line-height: 25px;cursor: pointer" class="fa fa-lg fa-pencil-square-o list-icons pull-right" aria-hidden="true"></i>
-                                <div class="col-md-8 col-md-offset-2 actor-edit">
-                                    <form action="" method="post">
-                                        {{csrf_field()}}
-                                        <input type="text" name="genre" value="" />
-                                        <input type="submit" class="btn btn-primary btn-sm" value="Edit actor" />
-                                    </form>
-                                </div>
+                                <a style="line-height: 50px" class="pull-right" href="#" title="Delete actor"><i class="fa fa-lg fa-trash list-icons" aria-hidden="true"></i></a>
+                                <i title="Edit actor" style="line-height:50px;cursor: pointer" class="fa fa-lg fa-pencil-square-o list-icons pull-right" aria-hidden="true"></i>
                             </li>
 
                         @endforeach
