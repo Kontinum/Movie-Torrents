@@ -28,6 +28,9 @@ Route::group(
 
     //Delete genre
     Route::get('/genre/{genre_id}/delete','AdminPagesController@deleteGenre')->name('deleteGenre');
+
+    //Edit genre
+    Route::post('/genre/{genre_id}/edit','AdminPagesController@postEditGenre')->name('postEditGenre');
 }
 );
 
