@@ -7,7 +7,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Add Actor</div>
                     <div class="panel-body">
-                        <form class="form-horizontal" role="form" method="POST" action="{{ route('postGenre') }}">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ route('postActor') }}">
                             {{ csrf_field() }}
 
                             <div class="form-group{{ $errors->has('actor') ? ' has-error' : '' }}">
@@ -20,6 +20,18 @@
                                         <span class="help-block">
                                         <strong>{{ $errors->first('actor') }}</strong>
                                     </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group {{$errors->has('birth_year') ? 'has-error' : ''}}">
+                                <label for="birth_year" class="col-md-4 control-label">Birth year:</label>
+                                <div class="col-md-6">
+                                    <input id="birth_year" type="text" class="form-control" name="birth_year" value="{{old('birth_year')}}" required autofocus>
+                                    @if ($errors->has('birth_year'))
+                                        <span class="help-block">
+                                            <strong>{{$errors->first('birth_year')}}</strong>
+                                        </span>
                                     @endif
                                 </div>
                             </div>
