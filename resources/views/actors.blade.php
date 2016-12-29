@@ -38,7 +38,7 @@
             </div>
         </div>
     </div>
-    <section class="actor-list" style="background-color: aliceblue;">
+    <section style="background-color: aliceblue;">
         <div class="container">
             <div class="row">
                 <h2>List of actors:</h2>
@@ -49,7 +49,7 @@
                     @else
                         @foreach($actors as $actor)
 
-                            <li style="float: left" class="list-group-item col-md-4 col-sm-6 col-xs-12">
+                            <li style="float: left" class="actor-list list-group-item col-md-4 col-sm-6 col-xs-12">
                                 <img style="width: 40px;height: 40px;border-radius: 50%" src="/images/actors/{{$actor->thumbnail_path}}" alt="">
                                 {{$actor->name}}
                                 <a class="pull-right" href="#" title="Delete actor"><i class="fa fa-lg fa-trash list-icons" aria-hidden="true"></i></a>
