@@ -13,4 +13,7 @@ $('document').ready(function(){
         });
     })
 
+    $('.info-box.success').delay(4000).slideUp(1000);
+    $('.info-box.fail').delay(4000).slideUp(1000);
+
 });
