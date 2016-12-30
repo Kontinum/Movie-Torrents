@@ -49,6 +49,25 @@ class AdminPagesController extends Controller
         return redirect()->route('getActors')->with(['success'=>'Actor '.$request['actor'].' successfully added']);
     }
 
+    //Delete actor
+    public function deleteActor($actor_id)
+    {
+        $actor = Actor::find($actor_id);
+
+        if(!$actor){
+            return redirect()->route('getActors')->with(['fail'=>'That actor is not in database']);
+        }
+
+        //delete image with that filename
+        $filename = $actor->thumbnail_path;
+        unlink(public_path().'/images/actors/'.$filename);
+
+        $actor->delete();
+
+        return redirect()->route('getActors')->with(['success'=>'Actor '.$actor->name.' successfully deleted']);
+
+    }
+
     //Return all genres order by name
     public function getGenres()
     {
