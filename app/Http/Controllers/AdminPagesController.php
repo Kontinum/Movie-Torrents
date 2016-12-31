@@ -68,6 +68,19 @@ class AdminPagesController extends Controller
 
     }
 
+    //Return actors with a specific letter
+    public function letterActors($letter)
+    {
+        $actors = Actor::where('name','like', $letter .'%')->get();
+
+        if($actors->isEmpty()){
+            return redirect()->route('getActors')->with(['fail'=>'There is no actors that name begin with letter: '.$letter]);
+        }
+
+        return view('letterActors')->with('actors',$actors)->with('letter',$letter);
+
+    }
+
     //Return all genres order by name
     public function getGenres()
     {
