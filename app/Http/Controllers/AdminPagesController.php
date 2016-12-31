@@ -68,6 +68,24 @@ class AdminPagesController extends Controller
 
     }
 
+    //Search actors
+    public function postSearchActors(Request $request)
+    {
+        $this->validate($request,[
+            'actor_name'=>'required|min:3|max:30|regex:/^[(a-zA-Z\s)]+$/u'
+        ]);
+
+        $actors = Actor::where('name','like', '%'.$request['actor_name'].'%')->get();
+
+        if($actors->isEmpty()){
+            return redirect()->back()->with(['fail'=>'There is no actors with '.$request['actor_name'].' search term']);
+        }
+
+        $search_term = $request['actor_name'];
+
+        return view('searchActors')->with('actors',$actors)->with('search_term',$search_term);
+    }
+
     //Return actors with a specific letter
     public function letterActors($letter)
     {
