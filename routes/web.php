@@ -27,6 +27,9 @@ Route::group(
     //Add new actor
     Route::post('/actors','AdminPagesController@postActor')->name('postActor');
 
+    //Search actors with A-Z letters
+    Route::get('/actors/letter/{letter}','AdminPagesController@letterActors')->name('letterActors');
+
     //Delete actor
     Route::get('/actor/{actor_id}/delete','AdminPagesController@deleteActor')->name('deleteActor');
 
