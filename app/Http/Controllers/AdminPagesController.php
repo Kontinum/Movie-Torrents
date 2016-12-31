@@ -9,12 +9,12 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminPagesController extends Controller
 {
-    //Return all actors order by name
+    //Return number of actors
     public function getActors()
     {
-        $actors = Actor::orderBy('name','ASC')->get();
+        $count_actors = Actor::all()->count();
 
-        return view('actors')->with('actors',$actors);
+        return view('actors')->with('count_actors',$count_actors);
     }
 
     //Add new actor
