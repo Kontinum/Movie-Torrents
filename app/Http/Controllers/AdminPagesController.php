@@ -84,11 +84,11 @@ class AdminPagesController extends Controller
     //Return all genres order by name
     public function getGenres()
     {
-        foreach(Auth::user()->roles as $role) {
-            if ($role->name !== 'admin') {
+        $role = Auth::user()->roles()->get();
+            if ($role->isEmpty()) {
                 return redirect()->route('home');
             }
-        }
+
         $genres = Genre::orderBy('name','ASC')->get();
 
         return view('genres')->with('genres',$genres);
