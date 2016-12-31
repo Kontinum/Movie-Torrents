@@ -76,7 +76,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Search Actors</div>
                     <div class="panel-body">
-                        <form class="form-horizontal" role="form" method="POST" action="#">
+                        <form class="form-horizontal" role="form" method="POST" action="{{route('postSearchActors')}}">
                             {{ csrf_field() }}
 
                             <div class="form-group{{ $errors->has('actor_name') ? ' has-error' : '' }}">
@@ -92,7 +92,6 @@
                                     @endif
                                 </div>
                             </div>
-
 
                             <div class="form-group">
                                 <div class="col-md-8 col-md-offset-4">
