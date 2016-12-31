@@ -108,4 +108,19 @@
         </div>
     </div>
 
+    <section style="background-color: aliceblue;height: 600px">
+        <div class="container">
+            <div class="row">
+                <h2>Actors that name begin with letter:</h2>
+                <hr>
+            </div>
+            <div class="row">
+                <div class="list-group">
+                    @foreach(range('A','Z') as $letter)
+                        <a href="{{route('letterActors',['letter'=>$letter])}}" class="list-group-item col-md-3 col-sm-4 col-xs-6 ">{{$letter}}</a>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection
