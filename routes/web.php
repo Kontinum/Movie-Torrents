@@ -21,7 +21,7 @@ Auth::routes();
 Route::group(
     ['prefix'=>'admin','middleware'=>'auth'],function(){
 
-    //Alows admin to see all actors, edit, or delete them
+    //Allows admin to add new actor and search them
     Route::get('/actors','AdminPagesController@getActors')->name('getActors');
 
     //Add new actor
