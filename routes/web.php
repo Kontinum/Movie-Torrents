@@ -37,16 +37,16 @@ Route::group(
     Route::get('/actor/{actor_id}/delete','AdminPagesController@deleteActor')->name('deleteActor');
 
     //Allows admin to add genre, see all genres, edit or delete them
-    Route::get('/genres','AdminPagesController@getGenres')->name('getGenres');
+    Route::get('/genres','GenrePagesController@getGenres')->name('getGenres');
 
     //Allows admin to add new genre
-    Route::post('/genres','AdminPagesController@postGenre')->name('postGenre');
+    Route::post('/genres','GenrePagesController@postGenre')->name('postGenre');
 
     //Delete genre
-    Route::get('/genre/{genre_id}/delete','AdminPagesController@deleteGenre')->name('deleteGenre');
+    Route::get('/genre/{genre_id}/delete','GenrePagesController@deleteGenre')->name('deleteGenre');
 
     //Edit genre
-    Route::post('/genre/{genre_id}/edit','AdminPagesController@postEditGenre')->name('postEditGenre');
+    Route::post('/genre/{genre_id}/edit','GenrePagesController@postEditGenre')->name('postEditGenre');
 }
 );
 
