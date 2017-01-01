@@ -98,4 +98,16 @@ class ActorPagesController extends Controller
 
     }
 
+    //Return specific actor to edit
+    public function getEditActor($actor_id)
+    {
+        $actor = Actor::find($actor_id);
+
+        if(!$actor){
+            return redirect()->back()->with(['fail'=>'There is no actor with that name in database']);
+        }
+
+        return view('editActor')->with('actor',$actor);
+    }
+
 }
