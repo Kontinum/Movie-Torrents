@@ -56,10 +56,11 @@ class ActorPagesController extends Controller
             return redirect()->route('getActors')->with(['fail'=>'That actor is not in database']);
         }
 
-        //delete image with that filename
+        //delete image with that filename is user doesn't have default image
         $filename = $actor->thumbnail_path;
-        unlink(public_path().'/images/actors/'.$filename);
-
+        if($filename !== 'actor_default.png') {
+            unlink(public_path() . '/images/actors/' . $filename);
+        }
         $actor->delete();
 
         return redirect()->route('getActors')->with(['success'=>'Actor '.$actor->name.' successfully deleted']);
