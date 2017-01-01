@@ -67,7 +67,7 @@ class ActorPagesController extends Controller
     }
 
     //Search actors
-    public function postSearchActors(Request $request)
+    public function getSearchActors(Request $request)
     {
         $this->validate($request,[
             'actor_name'=>'required|min:3|max:30|regex:/^[(a-zA-Z\s)]+$/u'
