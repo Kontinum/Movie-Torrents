@@ -28,7 +28,7 @@ Route::group(
     Route::post('/actors','ActorPagesController@postActor')->name('postActor');
 
     //Search actors
-    Route::post('/actors/search','ActorPagesController@postSearchActors')->name('postSearchActors');
+    Route::get('/actors/search','ActorPagesController@getSearchActors')->name('getSearchActors');
 
     //Search actors with A-Z letters
     Route::get('/actors/letter/{letter}','ActorPagesController@letterActors')->name('letterActors');
