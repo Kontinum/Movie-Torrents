@@ -76,8 +76,8 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Search Actors</div>
                     <div class="panel-body">
-                        <form class="form-horizontal" role="form" method="POST" action="{{route('postSearchActors')}}">
-                            {{ csrf_field() }}
+                        <form class="form-horizontal" role="form" method="GET" action="{{route('getSearchActors')}}">
+
 
                             <div class="form-group{{ $errors->has('actor_name') ? ' has-error' : '' }}">
                                 <label for="actor_name" class="col-md-4 control-label">Actor name:</label>
