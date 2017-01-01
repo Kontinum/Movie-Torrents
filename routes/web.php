@@ -22,19 +22,19 @@ Route::group(
     ['prefix'=>'admin','middleware'=>'auth'],function(){
 
     //Allows admin to add new actor and search them
-    Route::get('/actors','AdminPagesController@getActors')->name('getActors');
+    Route::get('/actors','ActorPagesController@getActors')->name('getActors');
 
     //Add new actor
-    Route::post('/actors','AdminPagesController@postActor')->name('postActor');
+    Route::post('/actors','ActorPagesController@postActor')->name('postActor');
 
     //Search actors
-    Route::post('/actors/search','AdminPagesController@postSearchActors')->name('postSearchActors');
+    Route::post('/actors/search','ActorPagesController@postSearchActors')->name('postSearchActors');
 
     //Search actors with A-Z letters
-    Route::get('/actors/letter/{letter}','AdminPagesController@letterActors')->name('letterActors');
+    Route::get('/actors/letter/{letter}','ActorPagesController@letterActors')->name('letterActors');
 
     //Delete actor
-    Route::get('/actor/{actor_id}/delete','AdminPagesController@deleteActor')->name('deleteActor');
+    Route::get('/actor/{actor_id}/delete','ActorPagesController@deleteActor')->name('deleteActor');
 
     //Allows admin to add genre, see all genres, edit or delete them
     Route::get('/genres','GenrePagesController@getGenres')->name('getGenres');
