@@ -4,7 +4,7 @@
     <section style="background-color: aliceblue;">
         <div class="container">
             <div class="row">
-                <h2>Search results for {{$search_term}}: {{count($actors)}} results</h2>
+                <h2>Search results for <strong>{{$search_term}}</strong> : {{count($actors)}} results</h2>
             </div>
         </div>
     </section>
