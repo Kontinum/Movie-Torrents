@@ -33,6 +33,9 @@ Route::group(
     //Search actors with A-Z letters
     Route::get('/actors/letter/{letter}','ActorPagesController@letterActors')->name('letterActors');
 
+    //Allows admin to edit actor
+    Route::get('/actor/{actor_id}/edit','ActorPagesController@getEditActor')->name('getEditActor');
+
     //Delete actor
     Route::get('/actor/{actor_id}/delete','ActorPagesController@deleteActor')->name('deleteActor');
 
