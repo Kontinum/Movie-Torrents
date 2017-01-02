@@ -110,4 +110,35 @@ class ActorPagesController extends Controller
         return view('editActor')->with('actor',$actor);
     }
 
+    //Post edit actor
+    public function postEditActor(Request $request)
+    {
+        $this->validate($request,[
+            'actor_name'=>'required|min:5|max:30|regex:/^[(a-zA-Z\s)]+$/u',
+            'actor_birth_year'=>'required|digits:4',
+            'actor_image'=>'dimensions:max_width=256,max_height=256|mimes:jpg,jpeg,png'
+        ]);
+
+        $actor = Actor::find($request['actor_id']);
+
+        $actor->name = $request['actor_name'];
+        $actor->birth_year = $request['actor_birth_year'];
+
+        if($request->hasFile('actor_image')){
+            $actor_image = $request->file('actor_image');
+            $filename = time() . '.' . $actor_image->getClientOriginalName();
+
+            if($actor->thumbnail_path !== 'actor_default.png'){
+                unlink(public_path().'/images/actors/'.$actor->thumbnail_path);
+            }
+
+            $actor_image->move('images/actors/',$filename);
+            $actor->thumbnail_path = $filename;
+        }
+
+        $actor->save();
+
+        return redirect()->back()->with(['success'=>'Actor '.$actor->name.' successfully edited']);
+    }
+
 }
