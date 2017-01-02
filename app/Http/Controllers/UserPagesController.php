@@ -51,4 +51,18 @@ class UserPagesController extends Controller
 
         return view('searchUsers')->with('users',$users)->with('search_term',$search_term);
     }
+
+    //Delete user
+    public function deleteUser($user_id)
+    {
+        $user = User::find($user_id);
+
+        if(!$user){
+            return redirect()->route('getUsers')->with(['fail'=>'That user is not in database']);
+        }
+
+        $user->delete();
+
+        return redirect()->route('getUsers')->with(['success'=>'User '.$user->name.' successfully deleted']);
+    }
 }
