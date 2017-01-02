@@ -34,4 +34,21 @@ class UserPagesController extends Controller
 
         return redirect()->back()->with(['success'=>'User with name ' .$request['name'].' successfully added']);
     }
+
+    //Search users
+    public function getSearchUsers(Request $request)
+    {
+        $this->validate($request,[
+            'user_name'=>'required|min:1|max:255'
+        ]);
+        $users = User::where('name','like', '%'. $request['user_name'].'%')->get();
+
+        if($users->isEmpty()){
+            return redirect()->back()->with(['fail'=>'There is no user with '.$request['user_name'].' search term']);
+        }
+
+        $search_term = $request['user_name'];
+
+        return view('searchUsers')->with('users',$users)->with('search_term',$search_term);
+    }
 }
