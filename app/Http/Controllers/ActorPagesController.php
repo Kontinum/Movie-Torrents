@@ -39,7 +39,7 @@ class ActorPagesController extends Controller
             $filename = time(). '.'. $actor_image->getClientOriginalName();
             $actor_image->move('images/actors/',$filename);
 
-            $actor->thumbnail_path = $filename;
+            $actor->actor_picture = $filename;
         }
 
         $actor->save();
@@ -57,7 +57,7 @@ class ActorPagesController extends Controller
         }
 
         //delete image with that filename is user doesn't have default image
-        $filename = $actor->thumbnail_path;
+        $filename = $actor->actor_picture;
         if($filename !== 'actor_default.png') {
             unlink(public_path() . '/images/actors/' . $filename);
         }
@@ -128,12 +128,12 @@ class ActorPagesController extends Controller
             $actor_image = $request->file('actor_image');
             $filename = time() . '.' . $actor_image->getClientOriginalName();
 
-            if($actor->thumbnail_path !== 'actor_default.png'){
-                unlink(public_path().'/images/actors/'.$actor->thumbnail_path);
+            if($actor->actor_picture !== 'actor_default.png'){
+                unlink(public_path().'/images/actors/'.$actor->actor_picture);
             }
 
             $actor_image->move('images/actors/',$filename);
-            $actor->thumbnail_path = $filename;
+            $actor->actor_picture = $filename;
         }
 
         $actor->save();

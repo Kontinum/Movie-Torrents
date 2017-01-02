@@ -50,7 +50,7 @@
 
                     @foreach($actors as $actor)
                         <li style="float: left;height: 60px" class="actor-list list-group-item col-md-4 col-sm-6 col-xs-12">
-                            <img style="width: 40px;height: 40px;border-radius: 50%" src="/images/actors/{{$actor->thumbnail_path}}" alt="{{$actor->name}} image">
+                            <img style="width: 40px;height: 40px;border-radius: 50%" src="/images/actors/{{$actor->actor_picture}}" alt="{{$actor->name}} image">
                             {{$actor->name}}
                             <a style="line-height: 45px" class="pull-right" href="{{route('deleteActor',['actor_id'=>$actor->id])}}" title="Delete actor"><i class="fa fa-lg fa-trash list-icons" aria-hidden="true"></i></a>
                             <a href="{{route('getEditActor',['actor_id'=>$actor->id])}}" title="Edit actor"><i style="line-height:50px;" class="fa fa-lg fa-pencil-square-o list-icons pull-right" aria-hidden="true"></i></a>

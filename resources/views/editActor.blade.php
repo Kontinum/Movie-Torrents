@@ -11,7 +11,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-sm-6 col-xs-12">
-                <img class="actor-profile-img" src="/images/actors/{{$actor->thumbnail_path}}" alt="{{$actor->name}} image">
+                <img class="actor-profile-img" src="/images/actors/{{$actor->actor_picture}}" alt="{{$actor->name}} image">
             </div>
             <div class=" edit-actor-form col-md-8 col-sm-6 col-xs-12">
                 <form class="edit-actor-form" action="{{route('postEditActor')}}" method="post" enctype="multipart/form-data">
