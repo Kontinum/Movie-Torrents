@@ -24,7 +24,11 @@ Route::group(
     //Alows admin to add new user, seach and delete them
     Route::get('/users','UserPagesController@getUsers')->name('getUsers');
 
+    //Add new user
     Route::post('/users','UserPagesController@postUser')->name('postUser');
+
+    //Search users
+    Route::get('/users/search','UserPagesController@getSearchUsers')->name('getSearchUsers');
 
     //Allows admin to add new actor and search them
     Route::get('/actors','ActorPagesController@getActors')->name('getActors');
