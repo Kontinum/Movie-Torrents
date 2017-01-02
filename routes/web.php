@@ -36,6 +36,9 @@ Route::group(
     //Allows admin to edit actor
     Route::get('/actor/{actor_id}/edit','ActorPagesController@getEditActor')->name('getEditActor');
 
+    //Edit actor
+    Route::post('/actor/edit','ActorPagesController@postEditActor')->name('postEditActor');
+
     //Delete actor
     Route::get('/actor/{actor_id}/delete','ActorPagesController@deleteActor')->name('deleteActor');
 
