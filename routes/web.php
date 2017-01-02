@@ -21,8 +21,10 @@ Auth::routes();
 Route::group(
     ['prefix'=>'admin','middleware'=>'auth'],function(){
 
-    //Users
+    //Alows admin to add new user, seach and delete them
     Route::get('/users','UserPagesController@getUsers')->name('getUsers');
+
+    Route::post('/users','UserPagesController@postUser')->name('postUser');
 
     //Allows admin to add new actor and search them
     Route::get('/actors','ActorPagesController@getActors')->name('getActors');
