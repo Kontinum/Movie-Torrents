@@ -50,11 +50,12 @@
                 <ul class="list-group col-md-12">
 
                     @foreach($users as $user)
-                        <li style="float: left;height: 60px" class="list-group-item col-md-4 col-sm-6 col-xs-12">
+                        <li style="float: left;height: 60px" class="list-group-item col-md-4 col-sm-6 col-xs-12 {{($user->id == Auth::id()) ? 'active' : ''}}">
                             <img style="width: 40px;height: 40px;border-radius: 50%" src="/images/users/{{$user->profile_picture}}" alt="{{$user->name}} image">
                             {{$user->name}}
-                            <a style="line-height: 45px" class="pull-right" href="{{route('deleteUser',['user_id'=>$user->id])}}" title="Delete user"><i class="fa fa-lg fa-trash list-icons" aria-hidden="true"></i></a>
-
+                            @if($user->id !== Auth::id())
+                                <a style="line-height: 45px" class="pull-right" href="{{route('deleteUser',['user_id'=>$user->id])}}" title="Delete user"><i class="fa fa-lg fa-trash list-icons" aria-hidden="true"></i></a>
+                            @endif
                         </li>
                     @endforeach
                 </ul>
