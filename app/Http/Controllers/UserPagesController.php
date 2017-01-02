@@ -14,4 +14,24 @@ class UserPagesController extends Controller
 
         return view('users')->with('count_users',$count_users);
     }
+
+    //Add new user
+    public function postUser(Request $request)
+    {
+        $this->validate($request,[
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users',
+            'password' => 'required|min:6',
+        ]);
+
+        $user = new User();
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = bcrypt($request->password);
+
+        $user->save();
+
+        return redirect()->back()->with(['success'=>'User with name ' .$request['name'].' successfully added']);
+    }
 }
