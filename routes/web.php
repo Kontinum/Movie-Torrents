@@ -30,6 +30,9 @@ Route::group(
     //Search users
     Route::get('/users/search','UserPagesController@getSearchUsers')->name('getSearchUsers');
 
+    //Delete user
+    Route::get('/user/{user_id}/delete','UserPagesController@deleteUser')->name('deleteUser');
+
     //Allows admin to add new actor and search them
     Route::get('/actors','ActorPagesController@getActors')->name('getActors');
 
