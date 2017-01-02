@@ -21,6 +21,9 @@ Auth::routes();
 Route::group(
     ['prefix'=>'admin','middleware'=>'auth'],function(){
 
+    //Users
+    Route::get('/users','UserPagesController@getUsers')->name('getUsers');
+
     //Allows admin to add new actor and search them
     Route::get('/actors','ActorPagesController@getActors')->name('getActors');
 
