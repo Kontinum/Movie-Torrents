@@ -15,6 +15,7 @@
             </div>
             <div class=" edit-actor-form col-md-8 col-sm-6 col-xs-12">
                 <form class="edit-actor-form" action="{{route('postEditActor')}}" method="post" enctype="multipart/form-data">
+                    {{csrf_field()}}
                     <input type="hidden" name="actor_id" value="{{$actor->id}}">
                    <div class="form-group">
                        <label for="actor_name" class="control-label">Name:</label>
