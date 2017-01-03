@@ -68,6 +68,9 @@ Route::group(
 }
 );
 
+//Edit user information
+Route::post('/user/edit','UserPagesController@postEditUser')->name('postEditUser');
+
 //Allows user to change profile picture and username
-Route::get('/user/{user_id}/profile','UserpagesController@getprofile')->name('getProfile');
+Route::get('/user/{user_id}/profile','UserPagesController@getProfile')->name('getProfile');
 
