@@ -35,6 +35,14 @@ class UserPagesController extends Controller
         return redirect()->back()->with(['success'=>'User with name ' .$request['name'].' successfully added']);
     }
 
+    //Return user profile
+    public function getProfile($user_id)
+    {
+        $user = User::find($user_id);
+
+        return view('profile')->with('user',$user);
+    }
+
     //Search users
     public function getSearchUsers(Request $request)
     {
