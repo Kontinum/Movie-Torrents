@@ -68,3 +68,6 @@ Route::group(
 }
 );
 
+//Allows user to change profile picture and username
+Route::get('/user/{user_id}/profile','UserpagesController@getprofile')->name('getProfile');
+
