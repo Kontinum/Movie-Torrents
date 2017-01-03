@@ -62,7 +62,7 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href=""><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
+                                    <li><a href="{{route('getProfile',['user_id'=>Auth::id()])}}"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
                                     @foreach(Auth::user()->roles as $role)
                                         @if($role)
                                             <li><a href="{{route('getUsers')}}"><i class="fa fa-users" aria-hidden="true"></i> Users</a></li>
