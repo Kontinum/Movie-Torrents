@@ -37,7 +37,7 @@ class GenrePagesController extends Controller
         $genre->name = $request['genre'];
         $genre->save();
 
-        return redirect()->route('getGenres')->with(['success'=>'Genre '.$request["genre"].' successfully added']);
+        return redirect()->route('getGenres')->with(['success'=>'Genre '.$request["genre"].' has been successfully added']);
     }
 
     //Delete genre
@@ -50,7 +50,7 @@ class GenrePagesController extends Controller
         }
 
         $genre->delete();
-        return redirect()->route('getGenres')->with(['success'=>'Genre '.$genre->name.' successfully deleted']);
+        return redirect()->route('getGenres')->with(['success'=>'Genre '.$genre->name.' has been successfully deleted']);
     }
 
     public function postEditGenre(Request $request, $genre_id)
@@ -68,6 +68,6 @@ class GenrePagesController extends Controller
         $genre->name = $request['genre'];
         $genre->save();
 
-        return redirect()->route('getGenres')->with(['success'=>'Genre '.$request['genre'].' successfully edited']);
+        return redirect()->route('getGenres')->with(['success'=>'Genre '.$request['genre'].' has been successfully edited']);
     }
 }

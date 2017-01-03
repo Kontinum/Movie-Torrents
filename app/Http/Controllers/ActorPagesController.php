@@ -44,7 +44,7 @@ class ActorPagesController extends Controller
 
         $actor->save();
 
-        return redirect()->route('getActors')->with(['success'=>'Actor '.$request['actor'].' successfully added']);
+        return redirect()->route('getActors')->with(['success'=>'Actor '.$request['actor'].' has been successfully added']);
     }
 
     //Delete actor
@@ -63,7 +63,7 @@ class ActorPagesController extends Controller
         }
         $actor->delete();
 
-        return redirect()->route('getActors')->with(['success'=>'Actor '.$actor->name.' successfully deleted']);
+        return redirect()->route('getActors')->with(['success'=>'Actor '.$actor->name.' has been successfully deleted']);
 
     }
 
@@ -138,7 +138,7 @@ class ActorPagesController extends Controller
 
         $actor->save();
 
-        return redirect()->back()->with(['success'=>'Actor '.$actor->name.' successfully edited']);
+        return redirect()->back()->with(['success'=>'Actor '.$actor->name.' has been successfully edited']);
     }
 
 }

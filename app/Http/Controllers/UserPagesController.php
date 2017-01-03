@@ -32,7 +32,7 @@ class UserPagesController extends Controller
 
         $user->save();
 
-        return redirect()->back()->with(['success'=>'User with name ' .$request['name'].' successfully added']);
+        return redirect()->back()->with(['success'=>'User with name ' .$request['name'].' has been successfully added']);
     }
 
     //Return user profile
@@ -71,7 +71,7 @@ class UserPagesController extends Controller
 
         $user->delete();
 
-        return redirect()->route('getUsers')->with(['success'=>'User '.$user->name.' successfully deleted']);
+        return redirect()->route('getUsers')->with(['success'=>'User '.$user->name.' has been successfully deleted']);
     }
 
     //Edit user information
