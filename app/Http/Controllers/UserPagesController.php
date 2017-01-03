@@ -73,4 +73,35 @@ class UserPagesController extends Controller
 
         return redirect()->route('getUsers')->with(['success'=>'User '.$user->name.' successfully deleted']);
     }
+
+    //Edit user information
+    public function postEditUser(Request $request)
+    {
+        $this->validate($request,[
+            'user_name'=>'required|max:255',
+            'user_image'=>'dimensions:max_width=512,max_height=512|mimes:jpg,jpeg,png'
+        ]);
+
+        $user = User::find($request['user_id']);
+
+        $user->name = $request['user_name'];
+
+        if($request->hasFile('user_image')) {
+            $user_image = $request->file('user_image');
+
+            $filename = time() . '.' . $user_image->getClientOriginalName();
+
+            if ($user->profile_picture !== 'user_default.png') {
+                unlink(public_path() . '/images/users/' . $user->profile_picture);
+            }
+
+            $user_image->move('images/users/', $filename);
+            $user->profile_picture = $filename;
+        }
+
+        $user->save();
+
+        return redirect()->route('getProfile',['user_id'=>$user->id])->with(['success'=>'Your profile has been successfully updated']);
+
+    }
 }
