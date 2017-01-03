@@ -33,6 +33,9 @@ Route::group(
     //Delete user
     Route::get('/user/{user_id}/delete','UserPagesController@deleteUser')->name('deleteUser');
 
+    //Movies
+    Route::get('/movies','MoviePagesController@getMovies')->name('getMovies');
+
     //Allows admin to add new actor and search them
     Route::get('/actors','ActorPagesController@getActors')->name('getActors');
 
