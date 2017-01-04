@@ -59,7 +59,7 @@
 
                                 <div class="col-lg-11">
                                     <div class="form-group">
-                                        <label for="movie_genres">Movies genres (max 5):</label>
+                                        <label for="movie_genres">Movie genres (max 5):</label>
                                         <select class="form-control" name="" id="movie_genres">
 
                                         </select>
@@ -68,15 +68,124 @@
 
                                 <div class="col-lg-5">
                                    <div class="form-group">
-                                       <label for="movie_actor_1">Actor 1</label>
+                                       <label for="movie_actor_1">Actor 1:</label>
                                        <select class="form-control" name="" id="movie_actor_1"></select>
                                    </div>
                                 </div>
-                                <div class="role-as col-lg-1">as</div>
+
+                                <div class="role col-lg-1">as</div>
                                 <div class="col-lg-5">
                                     <div class="form-group">
                                         <label for="actor_1_role">Role:</label>
                                         <input class="form-control" id="actor_1_role" name="actor_1_role" type="text">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-5">
+                                    <div class="form-group">
+                                        <label for="movie_actor_2">Actor 2:</label>
+                                        <select class="form-control" name="" id="movie_actor_2"></select>
+                                    </div>
+                                </div>
+
+                                <div class="role col-lg-1">as</div>
+                                <div class="col-lg-5">
+                                    <div class="form-group">
+                                        <label for="actor_2_role">Role:</label>
+                                        <input class="form-control" id="actor_2_role" name="actor_2_role" type="text">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-5">
+                                    <div class="form-group">
+                                        <label for="movie_actor_3">Actor 3:</label>
+                                        <select class="form-control" name="" id="movie_actor_3"></select>
+                                    </div>
+                                </div>
+
+                                <div class="role col-lg-1">as</div>
+                                <div class="col-lg-5">
+                                    <div class="form-group">
+                                        <label for="actor_3_role">Role:</label>
+                                        <input class="form-control" id="actor_3_role" name="actor_3_role" type="text">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-5">
+                                    <div class="form-group">
+                                        <label for="movie_actor_4">Actor 4:</label>
+                                        <select class="form-control" name="" id="movie_actor_4"></select>
+                                    </div>
+                                </div>
+
+                                <div class="role col-lg-1">as</div>
+                                <div class="col-lg-5">
+                                    <div class="form-group">
+                                        <label for="actor_4_role">Role:</label>
+                                        <input class="form-control" id="actor_4_role" name="actor_4_role" type="text">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="form-group">
+                                        <label for="poster_image">Poster image</label>
+                                        <input id="poster_image" class="form-control" type="file" name="poster_image">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-lg-offset-1">
+                                    <div class="form-group">
+                                        <label for="screenshot1">Screenshot 1:</label>
+                                        <input id="screenshot1" class="form-control" type="file" name="screenshot1_image">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-lg-offset-1">
+                                    <div class="form-group">
+                                        <label for="screenshot2">Screenshot 2:</label>
+                                        <input id="screenshot2" class="form-control" type="file" name="screenshot2_image">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="form-group">
+                                        <label for="movie_length">Movie length:</label>
+                                        <input class="form-control" id="movie_length" name="movie_length" type="text">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-lg-offset-1">
+                                    <div class="form-group">
+                                        <label for="movie_size">Movie size:</label>
+                                        <input class="form-control" id="movie_size" name="movie_size" type="text">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-lg-offset-1">
+                                    <div class="form-group">
+                                        <label for="movie_resolution">Movie resolution:</label>
+                                        <input class="form-control" id="movie_resolution" name="movie_resolution" type="text">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="form-group">
+                                        <label for="movie_audio">Movie audio:</label>
+                                        <input class="form-control" id="movie_audio" name="movie_audio" type="text">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-lg-offset-1">
+                                    <div class="form-group">
+                                        <label for="movie_fps">Movie fps:</label>
+                                        <input class="form-control" id="movie_fps" name="movie_fps" type="text">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-lg-offset-1">
+                                    <div class="form-group">
+                                        <label for="movie_pg">Movie parental guide:</label>
+                                        <input class="form-control" id="movie_pg" name="movie_pg" type="text">
                                     </div>
                                 </div>
                             </form>
