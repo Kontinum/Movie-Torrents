@@ -3,15 +3,14 @@
 @section('content')
     <section style="background-color: aliceblue;">
         <div class="container">
-            <div class="row">
                 <h2>Number of actors:
                     @if($count_actors == 0)
                         There are no actors in database
                     @else
-                        {{$count_actors}}
+                        <strong>{{$count_actors}}</strong>
                     @endif
                 </h2>
-            </div>
+
         </div>
     </section>
     <div class="container">
