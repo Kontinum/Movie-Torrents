@@ -12,6 +12,9 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
+    <!-- Select2 css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/errors.css">
 
@@ -107,6 +110,8 @@
     <script src="/js/app.js"></script>
     <script src="https://use.fontawesome.com/31274ff3ad.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!-- Select2 js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
     <script src="/js/scripts.js"></script>
 </body>
 </html>
