@@ -3,9 +3,7 @@
 @section('content')
     <section style="background-color: aliceblue;">
         <div class="container">
-            <div class="row">
-                <h2>Actors that name begin with letter: {{$letter}}</h2>
-            </div>
+                <h2>Actors that name begin with letter: <strong>{{$letter}}</strong></h2>
         </div>
     </section>
     <section>

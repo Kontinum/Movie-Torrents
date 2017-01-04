@@ -3,9 +3,7 @@
 @section('content')
     <section style="background-color: aliceblue">
         <div class="container">
-            <div class="row">
                 <h2>Number of users: <strong>{{$count_users}}</strong></h2>
-            </div>
         </div>
     </section>
     <div class="container">
