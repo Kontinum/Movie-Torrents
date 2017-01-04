@@ -1,6 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
+    <section style="background-color: aliceblue;">
+        <div class="container">
+            <h2>Number of genres:
+                @if(count($genres) == 0)
+                    The are no genres in database
+                    @else
+                    <strong>{{count($genres)}}</strong>
+                @endif
+            </h2>
+        </div>
+    </section>
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
