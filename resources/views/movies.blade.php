@@ -59,70 +59,97 @@
 
                                 <div class="col-lg-11">
                                     <div class="form-group">
-                                        <label for="movie_genres">Movie genres (max 5):</label>
-                                        <select class="form-control" name="" id="movie_genres">
+                                        <label for="movie_genres">Movie genres:</label>
+                                        <select class="genre-select form-control" name="" id="movie_genres" multiple="multiple">
+                                            @foreach($genres as $genre)
+                                                <option value="{{$genre->id}}">{{$genre->name}}</option>
+                                            @endforeach
 
                                         </select>
                                     </div>
                                 </div>
 
-                                <div class="col-lg-5">
-                                   <div class="form-group">
-                                       <label for="movie_actor_1">Actor 1:</label>
-                                       <select class="form-control" name="" id="movie_actor_1"></select>
+                                <div class="row">
+                                    <div class="col-lg-5">
+                                        <div class="form-group">
+                                            <label for="movie_actor_1">Actor 1:</label>
+                                            <select class="actor-select form-control" name="" id="movie_actor_1" multiple>
+                                                @foreach($actors as $actor)
+                                                    <option value="{{$actor->id}}">{{$actor->name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="role col-lg-1">as</div>
+                                    <div class="col-lg-5">
+                                        <div class="form-group">
+                                            <label for="actor_1_role">Role:</label>
+                                            <input class="form-control" id="actor_1_role" name="actor_1_role" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+
+                               <div class="row">
+                                   <div class="col-lg-5">
+                                       <div class="form-group">
+                                           <label for="movie_actor_2">Actor 2:</label>
+                                           <select class="actor-select form-control" name="" id="movie_actor_2" multiple>
+                                               @foreach($actors as $actor)
+                                                   <option value="{{$actor->id}}">{{$actor->name}}</option>
+                                               @endforeach
+                                           </select>
+                                       </div>
                                    </div>
-                                </div>
 
-                                <div class="role col-lg-1">as</div>
-                                <div class="col-lg-5">
-                                    <div class="form-group">
-                                        <label for="actor_1_role">Role:</label>
-                                        <input class="form-control" id="actor_1_role" name="actor_1_role" type="text">
+                                   <div class="role col-lg-1">as</div>
+                                   <div class="col-lg-5">
+                                       <div class="form-group">
+                                           <label for="actor_2_role">Role:</label>
+                                           <input class="form-control" id="actor_2_role" name="actor_2_role" type="text">
+                                       </div>
+                                   </div>
+                               </div>
+
+                                <div class="row">
+                                    <div class="col-lg-5">
+                                        <div class="form-group">
+                                            <label for="movie_actor_3">Actor 3:</label>
+                                            <select class="actor-select form-control" name="" id="movie_actor_3" multiple>
+                                                @foreach($actors as $actor)
+                                                    <option value="{{$actor->id}}">{{$actor->name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="role col-lg-1">as</div>
+                                    <div class="col-lg-5">
+                                        <div class="form-group">
+                                            <label for="actor_3_role">Role:</label>
+                                            <input class="form-control" id="actor_3_role" name="actor_3_role" type="text">
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div class="col-lg-5">
-                                    <div class="form-group">
-                                        <label for="movie_actor_2">Actor 2:</label>
-                                        <select class="form-control" name="" id="movie_actor_2"></select>
+                                <div class="row">
+                                    <div class="col-lg-5">
+                                        <div class="form-group">
+                                            <label for="movie_actor_4">Actor 4:</label>
+                                            <select class="actor-select form-control" name="" id="movie_actor_4" multiple>
+                                                @foreach($actors as $actor)
+                                                    <option value="{{$actor->id}}">{{$actor->name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="role col-lg-1">as</div>
-                                <div class="col-lg-5">
-                                    <div class="form-group">
-                                        <label for="actor_2_role">Role:</label>
-                                        <input class="form-control" id="actor_2_role" name="actor_2_role" type="text">
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-5">
-                                    <div class="form-group">
-                                        <label for="movie_actor_3">Actor 3:</label>
-                                        <select class="form-control" name="" id="movie_actor_3"></select>
-                                    </div>
-                                </div>
-
-                                <div class="role col-lg-1">as</div>
-                                <div class="col-lg-5">
-                                    <div class="form-group">
-                                        <label for="actor_3_role">Role:</label>
-                                        <input class="form-control" id="actor_3_role" name="actor_3_role" type="text">
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-5">
-                                    <div class="form-group">
-                                        <label for="movie_actor_4">Actor 4:</label>
-                                        <select class="form-control" name="" id="movie_actor_4"></select>
-                                    </div>
-                                </div>
-
-                                <div class="role col-lg-1">as</div>
-                                <div class="col-lg-5">
-                                    <div class="form-group">
-                                        <label for="actor_4_role">Role:</label>
-                                        <input class="form-control" id="actor_4_role" name="actor_4_role" type="text">
+                                    <div class="role col-lg-1">as</div>
+                                    <div class="col-lg-5">
+                                        <div class="form-group">
+                                            <label for="actor_4_role">Role:</label>
+                                            <input class="form-control" id="actor_4_role" name="actor_4_role" type="text">
+                                        </div>
                                     </div>
                                 </div>
 
@@ -195,4 +222,16 @@
             </div>
         </div>
     </div>
+@endsection
+@section('script')
+    <script type="text/javascript">
+        $('.genre-select').select2({
+            placeholder: "Search and pick up to 5 genres",
+            maximumSelectionLength: 5
+        });
+        $('.actor-select').select2({
+            placeholder: "Search and pick one actor",
+            maximumSelectionLength: 1
+        });
+    </script>
 @endsection
