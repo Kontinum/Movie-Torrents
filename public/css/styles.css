@@ -147,3 +147,8 @@ figure:hover figcaption{
 .edit-actor-form{
     padding-top: 10px;
 }
+
+.role-as{
+	text-align:center;
+	margin-top:30px
+}
