@@ -13,7 +13,7 @@
                     <div class="panel-heading">Add movie</div>
                     <div class="panel-body">
                         <div class="col-lg-offset-1">
-                            <form class="form-horizontal" role="form" method="POST" action="">
+                            <form class="form-horizontal" role="form" method="POST" action="{{route('postMovie')}}">
                                 {{csrf_field()}}
                                 <div class="col-lg-5">
                                     <div class="form-group">
@@ -214,6 +214,10 @@
                                         <label for="movie_pg">Movie parental guide:</label>
                                         <input class="form-control" id="movie_pg" name="movie_pg" type="text">
                                     </div>
+                                </div>
+
+                                <div class="form-group col-lg-11">
+                                    <input class="btn btn-primary" value="Add movie" type="submit">
                                 </div>
                             </form>
                         </div>
