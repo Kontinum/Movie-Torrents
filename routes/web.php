@@ -36,6 +36,9 @@ Route::group(
     //Movies
     Route::get('/movies','MoviePagesController@getMovies')->name('getMovies');
 
+    //Add movie
+    Route::post('/movies','MoviePagesController@postMovie')->name('postMovie');
+
     //Allows admin to add new actor and search them
     Route::get('/actors','ActorPagesController@getActors')->name('getActors');
 
