@@ -20,6 +20,8 @@ class CreatePicturesTable extends Migration
             $table->string('picture1_path');
             $table->string('picture2_path');
             $table->timestamps();
+
+            $table->foreign('movie_id')->references('id')->on('movies')->onDelete('CASCADE');
         });
     }
 

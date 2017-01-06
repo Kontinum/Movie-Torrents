@@ -21,10 +21,12 @@ class CreateTorrentsTable extends Migration
             $table->string('audio');
             $table->string('length');
             $table->string('fps');
-            $table->string('peer_seed');
+            $table->string('peer_seed')->default('1/1');
             $table->string('pg');
             $table->integer('downloaded');
             $table->timestamps();
+
+            $table->foreign('movie_id')->references('id')->on('movies')->onDelete('CASCADE');
         });
     }
 
