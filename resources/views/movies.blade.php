@@ -13,7 +13,7 @@
                     <div class="panel-heading">Add movie</div>
                     <div class="panel-body">
                         <div class="col-lg-offset-1">
-                            <form class="form-horizontal" role="form" method="POST" action="{{route('postMovie')}}">
+                            <form class="form-horizontal" role="form" method="POST" action="{{route('postMovie')}}" enctype="multipart/form-data">
                                 {{csrf_field()}}
                                 <div class="col-lg-5">
                                     <div class="form-group">
