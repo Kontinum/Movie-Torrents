@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Actor;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class ActorPagesController extends Controller
 {
@@ -21,7 +22,7 @@ class ActorPagesController extends Controller
         $this->validate($request,[
             'actor'=>'required|min:5|max:30|regex:/^[(a-zA-Z\s)]+$/u',
             'birth_year'=>'required|numeric',
-            'actor_image'=>'dimensions:max_width=256,max_height=256|mimes:jpg,jpeg,png'
+            'actor_image'=>'dimensions:min_width=256,min_height=256|mimes:jpg,jpeg,png'
         ]);
 
         $actor = Actor::where('name',$request['actor'])->where('birth_year',$request['birth_year'])->first();
@@ -37,7 +38,7 @@ class ActorPagesController extends Controller
         if($request->hasFile('actor_image')){
             $actor_image = $request->file('actor_image');
             $filename = time(). '.'. $actor_image->getClientOriginalName();
-            $actor_image->move('images/actors/',$filename);
+            Image::make($actor_image)->resize(256,256)->save(public_path().'/images/actors/'.$filename);
 
             $actor->actor_picture = $filename;
         }
@@ -116,7 +117,7 @@ class ActorPagesController extends Controller
         $this->validate($request,[
             'actor_name'=>'required|min:5|max:30|regex:/^[(a-zA-Z\s)]+$/u',
             'actor_birth_year'=>'required|digits:4',
-            'actor_image'=>'dimensions:max_width=256,max_height=256|mimes:jpg,jpeg,png'
+            'actor_image'=>'dimensions:min_width=256,min_height=256|mimes:jpg,jpeg,png'
         ]);
 
         $actor = Actor::find($request['actor_id']);
@@ -132,7 +133,7 @@ class ActorPagesController extends Controller
                 unlink(public_path().'/images/actors/'.$actor->actor_picture);
             }
 
-            $actor_image->move('images/actors/',$filename);
+            Image::make($actor_image)->resize(256,256)->save(public_path().'/images/actors/'.$filename);
             $actor->actor_picture = $filename;
         }
 

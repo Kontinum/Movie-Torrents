@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class UserPagesController extends Controller
 {
@@ -79,7 +80,7 @@ class UserPagesController extends Controller
     {
         $this->validate($request,[
             'user_name'=>'required|max:255',
-            'user_image'=>'dimensions:max_width=512,max_height=512|mimes:jpg,jpeg,png'
+            'user_image'=>'dimensions:min_width=256,min_height=256|mimes:jpg,jpeg,png'
         ]);
 
         $user = User::find($request['user_id']);
@@ -95,7 +96,7 @@ class UserPagesController extends Controller
                 unlink(public_path() . '/images/users/' . $user->profile_picture);
             }
 
-            $user_image->move('images/users/', $filename);
+            Image::make($user_image)->resize(256,256)->save(public_path().'/images/users/'.$filename);
             $user->profile_picture = $filename;
         }
 
