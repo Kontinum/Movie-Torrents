@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 
 class UserPagesController extends Controller
@@ -93,7 +94,7 @@ class UserPagesController extends Controller
             $filename = time() . '.' . $user_image->getClientOriginalName();
 
             if ($user->profile_picture !== 'user_default.png') {
-                unlink(public_path() . '/images/users/' . $user->profile_picture);
+                Storage::delete('/images/users/' . $user->profile_picture);
             }
 
             Image::make($user_image)->resize(256,256)->save(public_path().'/images/users/'.$filename);
