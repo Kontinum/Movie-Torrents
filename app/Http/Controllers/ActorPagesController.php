@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Actor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 
 class ActorPagesController extends Controller
@@ -60,7 +61,7 @@ class ActorPagesController extends Controller
         //delete image with that filename is user doesn't have default image
         $filename = $actor->actor_picture;
         if($filename !== 'actor_default.png') {
-            unlink(public_path() . '/images/actors/' . $filename);
+            Storage::delete('/images/actors/' . $filename);
         }
         $actor->delete();
 
@@ -130,7 +131,7 @@ class ActorPagesController extends Controller
             $filename = time() . '.' . $actor_image->getClientOriginalName();
 
             if($actor->actor_picture !== 'actor_default.png'){
-                unlink(public_path().'/images/actors/'.$actor->actor_picture);
+                Storage::delete('/images/actors/'.$actor->actor_picture);
             }
 
             Image::make($actor_image)->resize(256,256)->save(public_path().'/images/actors/'.$filename);
