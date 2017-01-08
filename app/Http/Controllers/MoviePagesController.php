@@ -106,4 +106,20 @@ class MoviePagesController extends Controller
 
         return view('searchMovies')->with('movies',$movies)->with('search_term',$search_term);
     }
+
+    //Delete movie
+    public function deleteMovie($movie_id)
+    {
+        $movie = Movie::find($movie_id);
+
+        if(!$movie){
+            return redirect()->route('getMovies')->with(['fail'=>'That movie is not in database']);
+        }
+
+        $movie->delete();
+
+        Storage::deleteDirectory('/images/movies/'.$movie->name.'-'.$movie->year);
+
+        return redirect()->route('getMovies')->with(['success'=>'Movie '.$movie->name.' has been successfully deleted']);
+    }
 }
