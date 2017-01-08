@@ -124,4 +124,16 @@ class MoviePagesController extends Controller
 
         return redirect()->route('getMovies')->with(['success'=>'Movie '.$movie->name.' has been successfully deleted']);
     }
+
+    //Movie by letter
+    public function letterMovies($letter)
+    {
+        $movies = Movie::where('name','like',$letter.'%')->get();
+
+        if($movies->isEmpty()){
+            return redirect()->route('getMovies')->with(['fail'=>'There is no movies that name begin with '.$letter]);
+        }
+
+        return view('letterMovies')->with('movies',$movies)->with('letter',$letter);
+    }
 }
