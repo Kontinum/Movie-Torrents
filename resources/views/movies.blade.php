@@ -228,6 +228,30 @@
             </div>
         </div>
     </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-1">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Search movies</div>
+                    <div class="panel-body">
+                        <form class="form-horizontal" action="{{route('getSearchMovies')}}" method="get">
+                            <div class="form-group">
+                                <label for="movie_name" class="col-md-4 control-label">Movie name:</label>
+                                <div class="col-md-6">
+                                    <input id="movie_name" type="text" class="form-control" name="movie_name" value="{{old('actor_name')}}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <input type="submit" class="btn btn-primary" value="Search movies">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 @section('script')
     <script type="text/javascript">
