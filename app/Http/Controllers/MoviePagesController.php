@@ -88,6 +88,8 @@ class MoviePagesController extends Controller
         $torrent->downloaded = 0;
 
         $movie->torrent()->save($torrent);
+
+        return redirect()->route('getMovies')->with(['success'=>'Movie '.$request->movie_name.' has been successfully added']);
     }
 
     //Search movies
