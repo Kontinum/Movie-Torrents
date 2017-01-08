@@ -3,7 +3,13 @@
 @section('content')
     <section style="background-color: aliceblue;">
         <div class="container">
-            <h2>Number of movies: {{($count_movies == 0) ? 'There are no movies in database' : '<strong>'.$count_movies.'</strong>'}}</h2>
+            <h2>Number of movies:
+                @if($count_movies == 0)
+                    There are no movies in database
+                    @else
+                    <strong>{{$count_movies}}</strong>
+                @endif
+            </h2>
         </div>
     </section>
     <div class="container">
