@@ -89,4 +89,21 @@ class MoviePagesController extends Controller
 
         $movie->torrent()->save($torrent);
     }
+
+    //Search movies
+    public function getSearchMovies(Request $request)
+    {
+        $this->validate($request, [
+            'movie_name'=>'required'
+        ]);
+        $movies = Movie::where('name','like', '%'.$request->movie_name.'%')->get();
+
+        if($movies->isEmpty()){
+            return redirect()->back()->with(['fail'=>'There is no movie with '.$request->movie_name.' search term']);
+        }
+
+        $search_term = $request->movie_name;
+
+        return view('searchMovies')->with('movies',$movies)->with('search_term',$search_term);
+    }
 }
