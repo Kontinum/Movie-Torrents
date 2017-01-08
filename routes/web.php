@@ -45,6 +45,9 @@ Route::group(
     //Delete movie
     Route::get('/movie/{movie_id}/delete','MoviePagesController@deleteMovie')->name('deleteMovie');
 
+    //Movies by letter
+    Route::get('/movies/letter/{letter}','MoviePagesController@letterMovies')->name('letterMovies');
+
     //Allows admin to add new actor and search them
     Route::get('/actors','ActorPagesController@getActors')->name('getActors');
 
