@@ -10,8 +10,10 @@
         <div class="row">
             <div class="col-lg-9 col-lg-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Add movie</div>
-                    <div class="panel-body">
+                    <div style="cursor: pointer" class="dropdown-movie panel-heading">Add movie
+                        <i style="line-height: normal" class="dropdown-movie-icon fa fa-lg fa-chevron-down pull-right"></i>
+                    </div>
+                    <div class="add-movie-form panel-body">
                         <div class="col-lg-offset-1">
                             <form class="form-horizontal" role="form" method="POST" action="{{route('postMovie')}}" enctype="multipart/form-data">
                                 {{csrf_field()}}
