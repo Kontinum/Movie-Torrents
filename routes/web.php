@@ -39,7 +39,11 @@ Route::group(
     //Add movie
     Route::post('/movies','MoviePagesController@postMovie')->name('postMovie');
 
+    //Search movies
     Route::get('/movies/search','MoviePagesController@getSearchMovies')->name('getSearchMovies');
+
+    //Delete movie
+    Route::get('/movie/{movie_id}/delete','MoviePagesController@deleteMovie')->name('deleteMovie');
 
     //Allows admin to add new actor and search them
     Route::get('/actors','ActorPagesController@getActors')->name('getActors');
