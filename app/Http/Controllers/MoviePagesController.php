@@ -9,6 +9,7 @@ use App\Movie;
 use App\Picture;
 use App\Torrent;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 
 class MoviePagesController extends Controller
@@ -52,7 +53,7 @@ class MoviePagesController extends Controller
         }
 
         //add pictures for movie
-        mkdir(public_path().'/images/movies/'.$request->movie_name.'-'.$request->movie_year);
+        Storage::makeDirectory('/images/movies/'.$request->movie_name.'-'.$request->movie_year);
         $images_path = public_path().'/images/movies/'.$request->movie_name.'-'.$request->movie_year.'/';
 
         $poster_image = $request->file('poster_image');
