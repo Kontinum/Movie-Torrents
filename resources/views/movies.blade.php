@@ -265,7 +265,7 @@
                 <hr>
             </div>
             <div class="row">
-                <div class="list-group">
+                <div class="list-group"><a class="list-group-item col-md-3 col-sm-4 col-xs-6" href="{{route('letterMovies',['letter'=>'0-9'])}}">0-9</a>
                     @foreach(range('A','Z') as $letter)
                         <a href="{{route('letterMovies',['letter'=>$letter])}}" class="list-group-item col-md-3 col-sm-4 col-xs-6 ">{{$letter}}</a>
                     @endforeach
