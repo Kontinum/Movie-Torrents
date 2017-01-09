@@ -128,7 +128,11 @@ class MoviePagesController extends Controller
     //Movie by letter
     public function letterMovies($letter)
     {
-        $movies = Movie::where('name','like',$letter.'%')->get();
+        if($letter == '0-9'){
+            $movies = Movie::where('name','REGEXP','^[0-9]')->get();
+        }else {
+            $movies = Movie::where('name', 'like', $letter . '%')->get();
+        }
 
         if($movies->isEmpty()){
             return redirect()->route('getMovies')->with(['fail'=>'There is no movies that name begin with '.$letter]);
