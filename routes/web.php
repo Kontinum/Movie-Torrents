@@ -48,6 +48,9 @@ Route::group(
     //Movies by letter
     Route::get('/movies/letter/{letter}','MoviePagesController@letterMovies')->name('letterMovies');
 
+    //Edit movie
+    Route::get('/movie/{movie_id}/edit','MoviePagesController@getEditMovie')->name('getEditMovie');
+
     //Allows admin to add new actor and search them
     Route::get('/actors','ActorPagesController@getActors')->name('getActors');
 
