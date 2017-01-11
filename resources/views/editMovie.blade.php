@@ -243,7 +243,7 @@
                                 </div>
 
                                 <div class="form-group col-lg-11">
-                                    <input class="btn btn-primary" value="Add movie" type="submit">
+                                    <input class="btn btn-primary" value="Edit movie" type="submit">
                                 </div>
                             </form>
                         </div>
