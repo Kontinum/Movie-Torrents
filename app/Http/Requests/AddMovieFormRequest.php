@@ -27,7 +27,7 @@ class AddMovieFormRequest extends FormRequest
             'movie_name'=>'max:100',
             'movie_year'=>'digits:4',
             'movie_director'=>'min:5|max:30|regex:/^[(a-zA-Z\s)]+$/u',
-            'youtube_trailer'=>'url',
+            'youtube_trailer'=>'url|youtube',
             'imdb_rating'=>'numeric',
             'movie_synopsis'=>'string',
             'genres[]'=>'',
