@@ -140,4 +140,20 @@ class MoviePagesController extends Controller
 
         return view('letterMovies')->with('movies',$movies)->with('letter',$letter);
     }
+
+    //Display form for movie editing
+    public function getEditMovie($movie_id)
+    {
+        $movie = Movie::find($movie_id);
+
+        if(!$movie){
+            return redirect()->route('getMovies')->with(['fail'=>'There is no movie with that name in database']);
+        }
+
+        $genres = Genre::all();
+        $actors = Actor::all();
+        $movie_actors = $movie->actors()->get();
+
+        return view('editMovie')->with('movie',$movie)->with('genres',$genres)->with('actors',$actors)->with('movie_actors',$movie_actors);
+    }
 }
