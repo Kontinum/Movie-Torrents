@@ -51,6 +51,9 @@ Route::group(
     //Edit movie
     Route::get('/movie/{movie_id}/edit','MoviePagesController@getEditMovie')->name('getEditMovie');
 
+    //Post edit movie
+    Route::post('/movie/edit','MoviePagesController@postEditMovie')->name('postEditMovie');
+
     //Allows admin to add new actor and search them
     Route::get('/actors','ActorPagesController@getActors')->name('getActors');
 
