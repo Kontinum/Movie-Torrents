@@ -185,42 +185,42 @@
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="movie_length">Movie length:</label>
-                                        <input class="form-control" id="movie_length" name="movie_length" type="text" value="{{old('movie_length')}}">
+                                        <input class="form-control" id="movie_length" name="movie_length" type="text" value="{{old('movie_length') ? old('movie_length') : '2h'}}">
                                     </div>
                                 </div>
 
                                 <div class="col-lg-3 col-lg-offset-1">
                                     <div class="form-group">
                                         <label for="movie_size">Movie size:</label>
-                                        <input class="form-control" id="movie_size" name="movie_size" type="text" value="{{old('movie_size')}}">
+                                        <input class="form-control" id="movie_size" name="movie_size" type="text" value="{{old('movie_size') ? old('movie_size') : '700mb'}}">
                                     </div>
                                 </div>
 
                                 <div class="col-lg-3 col-lg-offset-1">
                                     <div class="form-group">
                                         <label for="movie_resolution">Movie resolution:</label>
-                                        <input class="form-control" id="movie_resolution" name="movie_resolution" type="text" value="{{old('movie_resolution')}}">
+                                        <input class="form-control" id="movie_resolution" name="movie_resolution" type="text" value="{{old('movie_resolution') ? old('movie_resolution') : '1920x1080'}}">
                                     </div>
                                 </div>
 
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="movie_audio">Movie audio:</label>
-                                        <input class="form-control" id="movie_audio" name="movie_audio" type="text" value="{{old('movie_audio')}}">
+                                        <input class="form-control" id="movie_audio" name="movie_audio" type="text" value="{{old('movie_audio') ? old('movie_audio') : 'English'}}">
                                     </div>
                                 </div>
 
                                 <div class="col-lg-3 col-lg-offset-1">
                                     <div class="form-group">
                                         <label for="movie_fps">Movie fps:</label>
-                                        <input class="form-control" id="movie_fps" name="movie_fps" type="text" value="{{old('movie_fps')}}">
+                                        <input class="form-control" id="movie_fps" name="movie_fps" type="text" value="{{old('movie_fps') ? old('movie_fps') : '24'}}">
                                     </div>
                                 </div>
 
                                 <div class="col-lg-3 col-lg-offset-1">
                                     <div class="form-group">
                                         <label for="movie_pg">Movie parental guide:</label>
-                                        <input class="form-control" id="movie_pg" name="movie_pg" type="text" value="{{old('movie_pg')}}">
+                                        <input class="form-control" id="movie_pg" name="movie_pg" type="text" value="{{old('movie_pg') ? old('movie_pg') : 'PG-13'}}">
                                     </div>
                                 </div>
 
