@@ -46,7 +46,10 @@ class MoviePagesController extends Controller
         $movie->genres()->attach($request->genres);
 
         //add actors and their roles for movie
-        $actors_id = array($request->movie_actor_1,$request->movie_actor_2,$request->movie_actor_3,$request->movie_actor_4);
+        $actors_id = array_unique([$request->movie_actor_1,$request->movie_actor_2,$request->movie_actor_3,$request->movie_actor_4]);
+        if(count($actors_id) < 4){
+            return redirect()->back()->with(['fail'=>'Actors must be different']);
+        }
         $actors_roles = array($request->actor_1_role,$request->actor_2_role,$request->actor_3_role,$request->actor_4_role);
 
         for($i=0;$i<count($actors_id);$i++){
