@@ -23,7 +23,6 @@ class CreateTorrentsTable extends Migration
             $table->string('fps');
             $table->string('peer_seed')->default('1/1');
             $table->string('pg');
-            $table->integer('downloaded');
             $table->timestamps();
 
             $table->foreign('movie_id')->references('id')->on('movies')->onDelete('CASCADE');
