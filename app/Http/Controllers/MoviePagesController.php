@@ -89,7 +89,6 @@ class MoviePagesController extends Controller
         $torrent->length = $request->movie_length;
         $torrent->fps = $request->movie_fps;
         $torrent->pg = $request->movie_pg;
-        $torrent->downloaded = 0;
 
         $movie->torrent()->save($torrent);
 
@@ -243,7 +242,6 @@ class MoviePagesController extends Controller
         $torrent->length = $request->movie_length;
         $torrent->fps = $request->movie_fps;
         $torrent->pg = $request->movie_pg;
-        $torrent->downloaded = 0;
 
         $movie->torrent()->save($torrent);
 
