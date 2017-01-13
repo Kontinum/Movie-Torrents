@@ -93,3 +93,6 @@ Route::post('/user/edit','UserPagesController@postEditUser')->name('postEditUser
 //Allows user to change profile picture and username
 Route::get('/user/{user_id}/profile','UserPagesController@getProfile')->name('getProfile');
 
+//Download torrent
+Route::get('/downloadTorrent','TorrentController@downloadTorrent')->name('downloadTorrent');
+
