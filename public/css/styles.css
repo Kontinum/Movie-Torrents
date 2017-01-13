@@ -44,7 +44,7 @@ section i{
 }
 
 .movie-link-name:link, .movie-link-name:active{
-    font-size: 20px;
+    font-size: 15px;
     margin-left: 5px;
     text-decoration: none;
     font-weight: bold;
