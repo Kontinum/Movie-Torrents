@@ -21,6 +21,7 @@ class CreateMoviesTable extends Migration
             $table->text('synopsis');
             $table->string('youtube_trailer');
             $table->float('imdb_rating');
+            $table->integer('downloaded')->default(0);
             $table->timestamps();
         });
     }
