@@ -15,6 +15,15 @@ use Intervention\Image\Facades\Image;
 
 class MoviePagesController extends Controller
 {
+
+    public function home()
+    {
+        $popular_movies = Movie::orderBy('downloaded','DESC')->limit(4)->get();
+        $new_movies = Movie::orderBy('created_at','DESC')->limit(4)->get();
+
+       return view('home')->with('popular_movies',$popular_movies)->with('new_movies',$new_movies);
+    }
+
     public function getMovies()
     {
         $count_movies = Movie::all()->count();
