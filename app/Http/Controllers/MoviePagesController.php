@@ -256,4 +256,23 @@ class MoviePagesController extends Controller
 
         return redirect()->back()->with(['success'=>'Movie '.$request->movie_name.' has been successfully edited']);
     }
+
+    //browse a single movie
+    public function browseMovie($movie_id)
+    {
+        $movie = Movie::find($movie_id);
+
+        if(!$movie){
+            return redirect()->route('home')->with(['fail'=>'That movie is no longer available']);
+        }
+
+        $genres = $movie->genres;
+        $genres_string = "";
+        foreach($genres as $genre){
+                $genres_string .=$genre->name.'/';
+        }
+        $genres_string = rtrim($genres_string,'/');
+
+        return view('browseMovie')->with('movie',$movie)->with('genres_string',$genres_string);
+    }
 }
