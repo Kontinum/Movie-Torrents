@@ -151,3 +151,56 @@ figure:hover figcaption{
 .wrapper{
     min-height: 902px;
 }
+
+.browse-movie-wrap{
+    margin-top: 15px;
+}
+
+.browse-movie-poster{
+    box-shadow: 0px 0px 10px red;
+}
+
+.browse-movie-name{
+    margin-top: 5px;
+    margin-bottom:0px;
+    font-weight:bold;
+}
+
+.browse-movie-year, .browse-movie-genres, .browse-movie-rating, .browse-movie-actor-name{
+    font-weight: bold;
+}
+.browse-movie-year{
+    margin-top:5px;
+}
+
+.browse-movie-genres,.browse-movie-rating{
+    margin-top: 0;
+}
+
+.browse-movie-star, .browse-movie-info-icon{
+    color: cornflowerblue;
+}
+
+.browse-movie-normal{
+    font-weight:normal;
+}
+
+.browse-movie-screenshots{
+    margin-top: 100px;
+}
+
+.browse-movie-youtube, .browse-movies-screenshot{
+    width:100%;
+    height:250px;
+}
+
+.screenshots{
+    padding:0px 1px 0px 1px;
+}
+
+.browse-movie-actor{
+    margin-bottom: 10px;
+    border-left: 3px solid cornflowerblue;
+    padding-left: 5px;
+}
+
