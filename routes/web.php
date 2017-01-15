@@ -96,3 +96,6 @@ Route::get('/user/{user_id}/profile','UserPagesController@getProfile')->name('ge
 //Download torrent
 Route::get('/downloadTorrent','TorrentController@downloadTorrent')->name('downloadTorrent');
 
+//show single movie
+Route::get('/browse-movies/{movie_id}','MoviePagesController@browseMovie')->name('browseMovie');
+
