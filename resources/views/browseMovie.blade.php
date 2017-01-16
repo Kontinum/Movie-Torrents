@@ -63,7 +63,12 @@
                     <div class="row">
                         <div class="col-lg-3 col-lg-offset-1"><h4><i class="browse-movie-info-icon fa fa-lg fa-volume-up" aria-hidden="true"></i> {{$movie->torrent->audio}}</h4></div>
                         <div class="col-lg-3 col-lg-offset-1"><h4><i class="browse-movie-info-icon fa fa-lg fa-television" aria-hidden="true"></i> {{$movie->torrent->fps}} fps</h4></div>
-                        <div class="col-lg-3 col-lg-offset-1"><h4><i class="browse-movie-info-icon fa fa-lg fa-stop" aria-hidden="true"></i> {{$movie->torrent->pg}}</h4></div>
+                        <div class="col-lg-3 col-lg-offset-1"><h4><i class="browse-movie-info-icon fa fa-lg fa-eye" aria-hidden="true"></i> {{$movie->torrent->pg}}</h4></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 col-lg-offset-1"><h4><i class="browse-movie-info-icon fa fa-lg fa-calendar" aria-hidden="true"></i> {{$movie->created_at}}</h4></div>
+                        <div class="col-lg-3 col-lg-offset-1"><h4><i class="browse-movie-info-icon fa fa-lg fa-download" aria-hidden="true"></i> {{$movie->downloaded}}</h4></div>
+                        <div class="col-lg-3 col-lg-offset-1"><h4><i class="browse-movie-info-icon fa fa-lg fa-battery-half" aria-hidden="true"></i> {{$movie->torrent->peer_seed}}</h4></div>
                     </div>
                 </div>
                 <div class="col-lg-4">
