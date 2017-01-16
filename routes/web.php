@@ -94,7 +94,7 @@ Route::post('/user/edit','UserPagesController@postEditUser')->name('postEditUser
 Route::get('/user/{user_id}/profile','UserPagesController@getProfile')->name('getProfile');
 
 //Download torrent
-Route::get('/downloadTorrent','TorrentController@downloadTorrent')->name('downloadTorrent');
+Route::get('/downloadTorrent/{movie_id}','TorrentController@downloadTorrent')->name('downloadTorrent');
 
 //show single movie
 Route::get('/browse-movies/{movie_id}','MoviePagesController@browseMovie')->name('browseMovie');
