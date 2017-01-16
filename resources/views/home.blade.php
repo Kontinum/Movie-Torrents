@@ -39,7 +39,7 @@
                                     @endif
                                 </a>
                                 <div class="movie-year">{{$movie->year}}</div>
-                                <a href="{{route('downloadTorrent')}}" class="movie-link-download">
+                                <a href="{{route('downloadTorrent',['movie_id'=>$movie->id])}}" class="movie-link-download">
                                     <i class="fa fa-2x fa-download"></i>
                                 </a>
                             </div>
@@ -80,7 +80,7 @@
                                     @endif
                                 </a>
                                 <div class="movie-year">{{$movie->year}}</div>
-                                <a href="{{route('downloadTorrent')}}" class="movie-link-download">
+                                <a href="{{route('downloadTorrent',['movie_id'=>$movie->id])}}" class="movie-link-download">
                                     <i class="fa fa-2x fa-download"></i>
                                 </a>
                             </div>

@@ -14,7 +14,7 @@
                     <h3 class="browse-movie-genres"><span class="browse-movie-normal">Director:</span> {{$movie->director}}</h3>
                     <br><br>
                     <h3 class="browse-movie-rating"><span class="browse-movie-normal">Rating:</span> {{$movie->imdb_rating}} <i class="browse-movie-star fa fa-star" aria-hidden="true"></i></h3><br><br>
-                    <a href="{{route('downloadTorrent')}}"><button class="btn btn-primary">Download Torrent &nbsp;&nbsp;<i class="fa fa-lg fa-download" aria-hidden="true"></i></button></a>
+                    <a href="{{route('downloadTorrent',["movie_id"=>$movie->id])}}"><button class="btn btn-primary">Download Torrent &nbsp;&nbsp;<i class="fa fa-lg fa-download" aria-hidden="true"></i></button></a>
                 </div>
                 <div class="col-lg-3">
                     Movie recomendation
