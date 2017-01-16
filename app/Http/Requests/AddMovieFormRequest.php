@@ -30,7 +30,7 @@ class AddMovieFormRequest extends FormRequest
             'youtube_trailer'=>'required|url|youtube',
             'imdb_rating'=>'required|numeric',
             'movie_synopsis'=>'required|string',
-            'genres[]'=>'required',
+            'genres'=>'required',
             'movie_actor_1'=>'required',
             'movie_actor_2'=>'required',
             'movie_actor_3'=>'required',
