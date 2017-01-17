@@ -105,3 +105,6 @@ Route::post('/postComment','CommentController@postComment')->name('postComment')
 //delete comment
 Route::get('/deleteComment/{comment_id}','CommentController@deleteComment')->name('deleteComment');
 
+//see all coments
+Route::get('/allComments/{movie_id}','CommentController@allComments')->name('allComments');
+
