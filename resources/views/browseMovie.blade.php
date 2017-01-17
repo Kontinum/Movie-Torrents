@@ -100,15 +100,22 @@
                                     <img width="50px" height="50px" style="border-radius: 50%" src="/images/users/{{$comment->user->profile_picture}}" alt="">
                                 </div>
                                 <div class="col-lg-8">
-                                    <strong>{{$comment->text}}</strong>
+                                    <strong class="browse-movie-comment-text">{{$comment->text}}</strong>
+                                    <br> <i>{{$comment->created_at}}</i>
+                                </div>
+                                <div class="col-lg-1">
                                     @if($comment->user_id == Auth::id())
                                         <a title="Delete your comment" href="{{route('deleteComment',['comment_id'=>$comment->id])}}"><i class="pull-right fa fa-lg fa-times" aria-hidden="true"></i></a>
                                     @endif
-                                    <br> <i>{{$comment->created_at}}</i>
                                 </div>
                             </div>
                         </div>
                     @endforeach
+                @endif
+                @if(count($comments) == 5)
+                        <div class="col-lg-12 text-center">
+                            <a href="{{route('allComments',['movie_id'=>$movie->id])}}"><button type="button" class="btn btn-primary">See all</button></a>
+                        </div>
                 @endif
             </div>
             @if(!Auth::check())
