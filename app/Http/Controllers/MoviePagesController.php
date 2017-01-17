@@ -273,7 +273,7 @@ class MoviePagesController extends Controller
         }
         $genres_string = rtrim($genres_string,'/');
 
-        $comments = $movie->comments;
+        $comments = $movie->comments()->orderBy('created_at','DESC')->limit(5)->get();
 
 
         return view('browseMovie')->with('movie',$movie)->with('genres_string',$genres_string)->with('comments',$comments);
