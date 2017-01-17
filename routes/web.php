@@ -99,5 +99,9 @@ Route::get('/downloadTorrent/{movie_id}','TorrentController@downloadTorrent')->n
 //show single movie
 Route::get('/browse-movies/{movie_id}','MoviePagesController@browseMovie')->name('browseMovie');
 
+//post a comment
 Route::post('/postComment','CommentController@postComment')->name('postComment');
+
+//delete comment
+Route::get('/deleteComment/{comment_id}','CommentController@deleteComment')->name('deleteComment');
 
