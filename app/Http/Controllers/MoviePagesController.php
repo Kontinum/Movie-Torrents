@@ -273,6 +273,9 @@ class MoviePagesController extends Controller
         }
         $genres_string = rtrim($genres_string,'/');
 
-        return view('browseMovie')->with('movie',$movie)->with('genres_string',$genres_string);
+        $comments = $movie->comments;
+
+
+        return view('browseMovie')->with('movie',$movie)->with('genres_string',$genres_string)->with('comments',$comments);
     }
 }
