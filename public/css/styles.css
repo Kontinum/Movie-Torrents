@@ -208,3 +208,7 @@ figure:hover figcaption{
     margin-bottom: 10px;
 }
 
+.browse-movie-comment-text{
+    word-wrap: break-word;
+}
+
