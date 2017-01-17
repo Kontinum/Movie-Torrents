@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Movie;
 use Illuminate\Http\Request;
 use App\Comment;
 
@@ -35,5 +36,15 @@ class CommentController extends Controller
         $comment->delete();
 
         return back()->with(['success'=>'Your comment has been successfully deleted']);
+    }
+
+    //see all coments for a specific movie
+    public function allComments($movie_id)
+    {
+        $comments = Comment::where('movie_id',$movie_id)->orderBy('created_at','DESC')->get();
+
+        $movie = Movie::find($movie_id);
+
+        return view('allComments')->with('comments',$comments)->with('movie',$movie);
     }
 }
