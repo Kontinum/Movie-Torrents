@@ -76,7 +76,9 @@
                     @foreach($movie->actors as $actor)
                         <div class="browse-movie-actor">
                             <img style="width: 50px;height: 50px;border-radius: 50%" src="/images/actors/{{$actor->actor_picture}}" alt="">&nbsp;
-                            <span class="browse-movie-actor-name">{{$actor->name}}</span> as <span class="browse-movie-actor-name">{{$actor->pivot->plays}}</span>
+                            <span class="browse-movie-actor-name">
+                                <a href="{{route('moviesByActor',['actor_id'=>$actor->id])}}">{{$actor->name}}</a>
+                            </span> as <span class="browse-movie-actor-name">{{$actor->pivot->plays}}</span>
                         </div>
                     @endforeach
                 </div>
