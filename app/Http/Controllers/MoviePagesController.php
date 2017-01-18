@@ -286,4 +286,18 @@ class MoviePagesController extends Controller
             return view('browseMovies')->with('movies',$movies)->with('genres',$genres);
         }
     }
+
+    //get movies by an actor
+    public function moviesByActor($actor_id)
+    {
+        $actor = Actor::find($actor_id);
+
+        if(!$actor){
+            return back()->with(['fail','Oops, that actor is no longer in database']);
+        }
+
+        $movies = $actor->movies()->paginate(2);
+
+        return view('moviesbyActor')->with('actor',$actor)->with('movies',$movies);
+    }
 }
