@@ -10,6 +10,7 @@ use App\Movie;
 use App\Picture;
 use App\Torrent;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 
@@ -280,7 +281,9 @@ class MoviePagesController extends Controller
         }else{
             $movies = Movie::orderBy('created_at','DESC')->paginate(2);
 
-            return view('browseMovies')->with('movies',$movies);
+            $genres = Genre::all();
+
+            return view('browseMovies')->with('movies',$movies)->with('genres',$genres);
         }
     }
 }
