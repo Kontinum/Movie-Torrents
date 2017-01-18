@@ -97,7 +97,7 @@ Route::get('/user/{user_id}/profile','UserPagesController@getProfile')->name('ge
 Route::get('/downloadTorrent/{movie_id}','TorrentController@downloadTorrent')->name('downloadTorrent');
 
 //show single movie
-Route::get('/browse-movies/{movie_id}','MoviePagesController@browseMovie')->name('browseMovie');
+Route::get('/browse-movies/{movie_id?}','MoviePagesController@browseMovies')->name('browseMovies');
 
 //post a comment
 Route::post('/postComment','CommentController@postComment')->name('postComment');
