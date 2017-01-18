@@ -99,6 +99,9 @@ Route::get('/downloadTorrent/{movie_id}','TorrentController@downloadTorrent')->n
 //show single movie
 Route::get('/browse-movies/{movie_id?}','MoviePagesController@browseMovies')->name('browseMovies');
 
+//movies by actor
+Route::get('/browse-movies/actor/{actor_id}','MoviePagesController@moviesByActor')->name('moviesByActor');;
+
 //post a comment
 Route::post('/postComment','CommentController@postComment')->name('postComment');
 
