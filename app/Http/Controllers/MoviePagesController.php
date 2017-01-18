@@ -257,25 +257,30 @@ class MoviePagesController extends Controller
         return redirect()->back()->with(['success'=>'Movie '.$request->movie_name.' has been successfully edited']);
     }
 
-    //browse a single movie
-    public function browseMovie($movie_id)
+    //browse a single movie if an id is given otherwise browse all movies
+    public function browseMovies($movie_id = null)
     {
-        $movie = Movie::find($movie_id);
+        if($movie_id){
+            $movie = Movie::find($movie_id);
 
-        if(!$movie){
-            return redirect()->route('home')->with(['fail'=>'That movie is no longer available']);
-        }
+            if(!$movie){
+                return redirect()->route('home')->with(['fail'=>'That movie is no longer available']);
+            }
 
-        $genres = $movie->genres;
-        $genres_string = "";
-        foreach($genres as $genre){
+            $genres = $movie->genres;
+            $genres_string = "";
+            foreach($genres as $genre){
                 $genres_string .=$genre->name.'/';
+            }
+            $genres_string = rtrim($genres_string,'/');
+
+            $comments = $movie->comments()->orderBy('created_at','DESC')->limit(5)->get();
+
+            return view('browseMovie')->with('movie',$movie)->with('genres_string',$genres_string)->with('comments',$comments);
+        }else{
+            $movies = Movie::orderBy('created_at','DESC')->paginate(2);
+
+            return view('browseMovies')->with('movies',$movies);
         }
-        $genres_string = rtrim($genres_string,'/');
-
-        $comments = $movie->comments()->orderBy('created_at','DESC')->limit(5)->get();
-
-
-        return view('browseMovie')->with('movie',$movie)->with('genres_string',$genres_string)->with('comments',$comments);
     }
 }
