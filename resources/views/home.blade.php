@@ -18,7 +18,7 @@
                 @foreach($popular_movies as $movie)
                     <div class="col-lg-3 col-lg-offset-0 col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-12 col-xs-offset-0 ">
                         <div class="movie">
-                            <a href="{{route('browseMovie',['movie_id'=>$movie->id])}}" class="movie-link">
+                            <a href="{{route('browseMovies',['movie_id'=>$movie->id])}}" class="movie-link">
                                 <figure>
                                     <img class="img-responsive image-list" src="/images/movies/{{$movie->name .'-'.$movie->year .'/' .$movie->pictures->poster_picture}}" alt="ipman">
                                     <figcaption class="hidden-sm hidden-xs">
@@ -31,7 +31,7 @@
                                 </figure>
                             </a>
                             <div class="movie-bottom">
-                                <a href="{{route('browseMovie',['movie_id'=>$movie->id])}}" class="movie-link-name">
+                                <a href="{{route('browseMovies',['movie_id'=>$movie->id])}}" class="movie-link-name">
                                     @if(strlen($movie->name) > 18)
                                         {{substr($movie->name,0,25).'...'}}
                                         @else
@@ -59,7 +59,7 @@
                 @foreach($new_movies as $movie)
                     <div class="col-lg-3 col-lg-offset-0 col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-12 col-xs-offset-0 ">
                         <div class="movie">
-                            <a href="{{route('browseMovie',['movie_id'=>$movie->id])}}" class="movie-link">
+                            <a href="{{route('browseMovies',['movie_id'=>$movie->id])}}" class="movie-link">
                                 <figure>
                                     <img class="img-responsive image-list" src="/images/movies/{{$movie->name .'-'.$movie->year .'/' .$movie->pictures->poster_picture}}" alt="ipman">
                                     <figcaption class="hidden-sm hidden-xs">
@@ -72,7 +72,7 @@
                                 </figure>
                             </a>
                             <div class="movie-bottom">
-                                <a href="{{route('browseMovie',['movie_id'=>$movie->id])}}" class="movie-link-name">
+                                <a href="{{route('browseMovies',['movie_id'=>$movie->id])}}" class="movie-link-name">
                                     @if(strlen($movie->name) > 18)
                                         {{substr($movie->name,0,25).'...'}}
                                     @else
