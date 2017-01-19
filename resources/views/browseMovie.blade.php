@@ -43,12 +43,12 @@
                     </div>
                     <div class="screenshots col-lg-4">
                         <a href="/images/movies/{{$movie->name.'-'.$movie->year.'/'.$movie->pictures->screenshot1}}" data-lightbox="screenshot" title="Click for larger image">
-                            <img class="browse-movies-screenshot img-responsive" src="/images/movies/{{$movie->name.'-'.$movie->year.'/'.$movie->pictures->screenshot1}}" alt="{{$movie->name}} screenshoot 1">
+                            <img class="browse-movie-screenshot img-responsive" src="/images/movies/{{$movie->name.'-'.$movie->year.'/'.$movie->pictures->screenshot1}}" alt="{{$movie->name}} screenshoot 1">
                         </a>
                     </div>
                     <div class="screenshots col-lg-4">
                         <a href="/images/movies/{{$movie->name.'-'.$movie->year.'/'.$movie->pictures->screenshot2}}" data-lightbox="screenshot" title="Click for larger image">
-                            <img class="browse-movies-screenshot img-responsive" src="/images/movies/{{$movie->name.'-'.$movie->year.'/'.$movie->pictures->screenshot2}}" alt="{{$movie->name}} screenshoot 1">
+                            <img class="browse-movie-screenshot img-responsive" src="/images/movies/{{$movie->name.'-'.$movie->year.'/'.$movie->pictures->screenshot2}}" alt="{{$movie->name}} screenshoot 1">
                         </a>
                     </div>
                     <hr class="col-lg-12">
