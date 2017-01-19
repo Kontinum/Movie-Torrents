@@ -269,15 +269,10 @@ class MoviePagesController extends Controller
             }
 
             $genres = $movie->genres;
-            $genres_string = "";
-            foreach($genres as $genre){
-                $genres_string .=$genre->name.'/';
-            }
-            $genres_string = rtrim($genres_string,'/');
 
             $comments = $movie->comments()->orderBy('created_at','DESC')->limit(5)->get();
 
-            return view('browseMovie')->with('movie',$movie)->with('genres_string',$genres_string)->with('comments',$comments);
+            return view('browseMovie')->with('movie',$movie)->with('genres',$genres)->with('comments',$comments);
         }else{
             $movies = Movie::orderBy('created_at','DESC')->paginate(2);
 
