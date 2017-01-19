@@ -13,7 +13,10 @@
                         <span class="browse-movie-normal">Year:</span> {{$movie->year}}
                     </h3>
                     <h3 class="browse-movie-genres">
-                        <span class="browse-movie-normal">Genres:</span> {{$genres_string}}
+                        <span class="browse-movie-normal">Genres:</span>
+                        @foreach($genres as $genre)
+                            <a href="{{route('moviesByGenre',['genre_id'=>$genre->id])}}">{{$genre->name}}</a> {{'/'}}
+                            @endforeach
                     </h3>
                     <h3 class="browse-movie-genres">
                         <span class="browse-movie-normal">Director:</span> {{$movie->director}}
