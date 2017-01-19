@@ -295,4 +295,14 @@ class MoviePagesController extends Controller
 
         return view('moviesbyActor')->with('actor',$actor)->with('movies',$movies);
     }
+
+    //get movies by genre
+    public function moviesByGenre($genre_id)
+    {
+        $genre = Genre::find($genre_id);
+
+        $movies = $genre->movies()->orderBy('created_at','DESC')->paginate(2);
+
+        return view('moviesByGenre')->with('movies',$movies)->with('genre',$genre);
+    }
 }
