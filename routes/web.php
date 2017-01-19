@@ -100,7 +100,10 @@ Route::get('/downloadTorrent/{movie_id}','TorrentController@downloadTorrent')->n
 Route::get('/browse-movies/{movie_id?}','MoviePagesController@browseMovies')->name('browseMovies');
 
 //movies by actor
-Route::get('/browse-movies/actor/{actor_id}','MoviePagesController@moviesByActor')->name('moviesByActor');;
+Route::get('/browse-movies/actor/{actor_id}','MoviePagesController@moviesByActor')->name('moviesByActor');
+
+//movies by genre
+Route::get('/browse-movies/genre/{genre_id}','MoviePagesController@moviesByGenre')->name('moviesByGenre');
 
 //post a comment
 Route::post('/postComment','CommentController@postComment')->name('postComment');
