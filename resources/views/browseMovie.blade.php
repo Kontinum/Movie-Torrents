@@ -9,12 +9,23 @@
                 </div>
                 <div class="col-lg-5">
                     <h1 class="browse-movie-name">{{$movie->name}}</h1><br><br>
-                    <h3 class="browse-movie-year"><span class="browse-movie-normal">Year:</span> {{$movie->year}}</h3>
-                    <h3 class="browse-movie-genres"><span class="browse-movie-normal">Genres:</span> {{$genres_string}}</h3>
-                    <h3 class="browse-movie-genres"><span class="browse-movie-normal">Director:</span> {{$movie->director}}</h3>
+                    <h3 class="browse-movie-year">
+                        <span class="browse-movie-normal">Year:</span> {{$movie->year}}
+                    </h3>
+                    <h3 class="browse-movie-genres">
+                        <span class="browse-movie-normal">Genres:</span> {{$genres_string}}
+                    </h3>
+                    <h3 class="browse-movie-genres">
+                        <span class="browse-movie-normal">Director:</span> {{$movie->director}}
+                    </h3>
                     <br><br>
-                    <h3 class="browse-movie-rating"><span class="browse-movie-normal">Rating:</span> {{$movie->imdb_rating}} <i class="browse-movie-star fa fa-star" aria-hidden="true"></i></h3><br><br>
-                    <a href="{{route('downloadTorrent',["movie_id"=>$movie->id])}}"><button class="btn btn-primary">Download Torrent &nbsp;&nbsp;<i class="fa fa-lg fa-download" aria-hidden="true"></i></button></a>
+                    <h3 class="browse-movie-rating">
+                        <span class="browse-movie-normal">Rating:</span> {{$movie->imdb_rating}}
+                        <i class="browse-movie-star fa fa-star" aria-hidden="true"></i>
+                    </h3><br><br>
+                    <a href="{{route('downloadTorrent',["movie_id"=>$movie->id])}}">
+                        <button class="btn btn-primary">Download Torrent &nbsp;&nbsp;<i class="fa fa-lg fa-download" aria-hidden="true"></i></button>
+                    </a>
                 </div>
                 <div class="col-lg-3">
                     Movie recomendation
@@ -51,24 +62,54 @@
                     <h3>Movie info:</h3>
                     <div class="row">
                         <div class="col-lg-3 col-lg-offset-1">
-                            <h4><i class="browse-movie-info-icon fa fa-lg fa-film" aria-hidden="true"></i> {{$movie->torrent->length}}</h4>
+                            <h4>
+                                <i class="browse-movie-info-icon fa fa-lg fa-film" aria-hidden="true"></i> {{$movie->torrent->length}}
+                            </h4>
                         </div>
                         <div class="col-lg-3 col-lg-offset-1">
-                            <h4><i class="browse-movie-info-icon fa fa-lg fa-file-video-o" aria-hidden="true"></i> {{$movie->torrent->size}}</h4>
+                            <h4>
+                                <i class="browse-movie-info-icon fa fa-lg fa-file-video-o" aria-hidden="true"></i> {{$movie->torrent->size}}
+                            </h4>
                         </div>
                         <div class="col-lg-3 col-lg-offset-1">
-                            <h4><i class="browse-movie-info-icon fa fa-lg fa-arrows-alt" aria-hidden="true"></i> {{$movie->torrent->resolution}}</h4>
+                            <h4>
+                                <i class="browse-movie-info-icon fa fa-lg fa-arrows-alt" aria-hidden="true"></i> {{$movie->torrent->resolution}}
+                            </h4>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-3 col-lg-offset-1"><h4><i class="browse-movie-info-icon fa fa-lg fa-volume-up" aria-hidden="true"></i> {{$movie->torrent->audio}}</h4></div>
-                        <div class="col-lg-3 col-lg-offset-1"><h4><i class="browse-movie-info-icon fa fa-lg fa-television" aria-hidden="true"></i> {{$movie->torrent->fps}} fps</h4></div>
-                        <div class="col-lg-3 col-lg-offset-1"><h4><i class="browse-movie-info-icon fa fa-lg fa-eye" aria-hidden="true"></i> {{$movie->torrent->pg}}</h4></div>
+                        <div class="col-lg-3 col-lg-offset-1">
+                            <h4>
+                                <i class="browse-movie-info-icon fa fa-lg fa-volume-up" aria-hidden="true"></i> {{$movie->torrent->audio}}
+                            </h4>
+                        </div>
+                        <div class="col-lg-3 col-lg-offset-1">
+                            <h4>
+                                <i class="browse-movie-info-icon fa fa-lg fa-television" aria-hidden="true"></i> {{$movie->torrent->fps}} fps
+                            </h4>
+                        </div>
+                        <div class="col-lg-3 col-lg-offset-1">
+                            <h4>
+                                <i class="browse-movie-info-icon fa fa-lg fa-eye" aria-hidden="true"></i> {{$movie->torrent->pg}}
+                            </h4>
+                        </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-3 col-lg-offset-1"><h4><i class="browse-movie-info-icon fa fa-lg fa-calendar" aria-hidden="true"></i> {{$movie->created_at}}</h4></div>
-                        <div class="col-lg-3 col-lg-offset-1"><h4><i class="browse-movie-info-icon fa fa-lg fa-download" aria-hidden="true"></i> {{$movie->downloaded}}</h4></div>
-                        <div class="col-lg-3 col-lg-offset-1"><h4><i class="browse-movie-info-icon fa fa-lg fa-battery-half" aria-hidden="true"></i> {{$movie->torrent->peer_seed}}</h4></div>
+                        <div class="col-lg-3 col-lg-offset-1">
+                            <h4>
+                                <i class="browse-movie-info-icon fa fa-lg fa-calendar" aria-hidden="true"></i> {{$movie->created_at}}
+                            </h4>
+                        </div>
+                        <div class="col-lg-3 col-lg-offset-1">
+                            <h4>
+                                <i class="browse-movie-info-icon fa fa-lg fa-download" aria-hidden="true"></i> {{$movie->downloaded}}
+                            </h4>
+                        </div>
+                        <div class="col-lg-3 col-lg-offset-1">
+                            <h4>
+                                <i class="browse-movie-info-icon fa fa-lg fa-battery-half" aria-hidden="true"></i> {{$movie->torrent->peer_seed}}
+                            </h4>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -116,7 +157,9 @@
                 @endif
                 @if(count($comments) == 5)
                         <div class="col-lg-12 text-center">
-                            <a href="{{route('allComments',['movie_id'=>$movie->id])}}"><button type="button" class="btn btn-primary">See all</button></a>
+                            <a href="{{route('allComments',['movie_id'=>$movie->id])}}">
+                                <button type="button" class="btn btn-primary">See all</button>
+                            </a>
                         </div>
                 @endif
             </div>

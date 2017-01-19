@@ -14,13 +14,10 @@
                     <div class="panel-body">
                         <form class="form-horizontal" role="form" method="GET" action="{{route('getSearchUsers')}}">
 
-
                             <div class="form-group{{ $errors->has('actor_name') ? ' has-error' : '' }}">
                                 <label for="user_name" class="col-md-4 control-label">User name:</label>
-
                                 <div class="col-md-6">
                                     <input id="user_name" type="text" class="form-control" name="user_name" value="{{ old('user_name') }}" required autofocus>
-
                                     @if ($errors->has('user_name'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('actor_name') }}</strong>
@@ -52,7 +49,9 @@
                             <img style="width: 40px;height: 40px;border-radius: 50%" src="/images/users/{{$user->profile_picture}}" alt="{{$user->name}} image">
                             {{$user->name}}
                             @if($user->id !== Auth::id())
-                                <a style="line-height: 45px" class="pull-right" href="{{route('deleteUser',['user_id'=>$user->id])}}" title="Delete user"><i class="fa fa-lg fa-trash list-icons" aria-hidden="true"></i></a>
+                                <a style="line-height: 45px" class="pull-right" href="{{route('deleteUser',['user_id'=>$user->id])}}" title="Delete user">
+                                    <i class="fa fa-lg fa-trash list-icons" aria-hidden="true"></i>
+                                </a>
                             @endif
                         </li>
                     @endforeach

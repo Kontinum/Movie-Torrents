@@ -24,7 +24,6 @@
 
                             <div class="form-group{{ $errors->has('actor') ? ' has-error' : '' }}">
                                 <label for="actor" class="col-md-4 control-label">Actor name:</label>
-
                                 <div class="col-md-6">
                                     <input id="actor" type="text" class="form-control" name="actor" value="{{ old('actor') }}" required autofocus>
 
@@ -76,7 +75,6 @@
                     <div class="panel-heading">Search Actors</div>
                     <div class="panel-body">
                         <form class="form-horizontal" role="form" method="GET" action="{{route('getSearchActors')}}">
-
 
                             <div class="form-group{{ $errors->has('actor_name') ? ' has-error' : '' }}">
                                 <label for="actor_name" class="col-md-4 control-label">Actor name:</label>
