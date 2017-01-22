@@ -5,12 +5,12 @@
         <div class="container">
             <div class="row">
                 <div class="search-movies col-lg-8 col-lg-offset-2">
-                    <form action="" class="form-horizontal" method="get">
+                    <form action="{{route('userSearchMovies')}}" class="form-horizontal" method="get">
                         <div class="row">
                             <div class="col-lg-11">
                                 <div class="form-group">
                                     <label class="pull-left control-label" for="movie_name">Movie name:</label>
-                                    <input type="text" id="movie_name" name="movie_name" class="form-control">
+                                    <input type="text" id="movie_name" name="movie_name" value="{{Request::old('movie_name')}}" class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -30,22 +30,27 @@
                                 <div class="form-group">
                                     <label class="pull-left control-label" for="rating">Rating:</label>
                                     <select class="form-control" name="rating" id="rating">
-                                        <option value="">All</option>
+                                        <option value="1">All</option>
                                         @for($i=10;$i>1;$i--)
-                                            <option value="{{$i}}">{{$i.'+'}}</option>
+                                            <option value="{{$i}}"
+                                            @if(Request::old('rating') == $i)
+                                                selected
+                                            @endif
+                                            >{{$i.'+'}}</option>
                                         @endfor
                                     </select>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-lg-offset-1">
                                 <div class="form-group">
-                                    <label class="pull-left control-label" for="year">Year:</label>
-                                    <select class="form-control" name="year" id="year">
-                                        <option value="">All</option>
-                                        <option value="2000">2000+</option>
-                                        @for($i=90;$i>40;$i-=10)
-                                            <option value="{{'19'.$i}}">{{$i."'s"}}</option>
-                                        @endfor
+                                    <label class="pull-left control-label" for="order">Order by:</label>
+                                    <select class="form-control" name="order" id="order">
+                                        <option value="created_at:desc" selected>Latest</option>
+                                        <option value="created_at:asc">Oldest</option>
+                                        <option value="year:desc">Year</option>
+                                        <option value="imdb_rating:desc">Rating</option>
+                                        <option value="downloaded:desc">Downloads</option>
+                                        <option value="name:asc">Alphabetical</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
