@@ -114,3 +114,5 @@ Route::get('/deleteComment/{comment_id}','CommentController@deleteComment')->nam
 //see all coments
 Route::get('/allComments/{movie_id}','CommentController@allComments')->name('allComments');
 
+Route::get('/searchMovies','MoviePagesController@userSearchMovies')->name('userSearchMovies');
+
