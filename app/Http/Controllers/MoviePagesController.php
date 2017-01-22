@@ -11,6 +11,7 @@ use App\Picture;
 use App\Torrent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 
@@ -305,4 +306,29 @@ class MoviePagesController extends Controller
 
         return view('moviesByGenre')->with('movies',$movies)->with('genre',$genre);
     }
+
+    public function userSearchMovies(Request $request)
+    {
+        Input::flash();
+
+        $order = explode(":",$request->order);
+        $movies = Movie::where([
+            ['name','like','%'.$request->movie_name.'%'],
+            ['imdb_rating','>=',$request->rating],
+        ])->orderBy($order[0],$order[1])->paginate(2);
+
+        $movies->setPath('?movie_name='.$request->movie_name.'&genres='.$request->genre.'&rating='.$request->rating.'&order='.$order[0].'%3A'.$order[1]);
+
+        //!! search genres !!//
+
+        $genres = Genre::all();
+
+        if($movies->isEmpty()){
+            return back()->with(['fail'=>'There are no results']);
+        }
+
+
+        return view('browseMovies')->with('movies',$movies)->with('genres',$genres);
+    }
 }
+
