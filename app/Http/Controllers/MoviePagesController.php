@@ -149,7 +149,7 @@ class MoviePagesController extends Controller
         }
 
         if($movies->isEmpty()){
-            return redirect()->route('getMovies')->with(['fail'=>'There is no movies that name begin with '.$letter]);
+            return redirect()->route('getMovies')->with(['fail'=>'There are no movies that name begin with '.$letter]);
         }
 
         return view('letterMovies')->with('movies',$movies)->with('letter',$letter);
