@@ -273,7 +273,9 @@ class MoviePagesController extends Controller
 
             $comments = $movie->comments()->orderBy('created_at','DESC')->limit(5)->get();
 
-            return view('browseMovie')->with('movie',$movie)->with('genres',$genres)->with('comments',$comments);
+            $recommended_movies = Movie::where('id','<>',$movie->id)->limit(4)->get();
+
+            return view('browseMovie')->with('movie',$movie)->with('genres',$genres)->with('comments',$comments)->with('recommended_movies',$recommended_movies);
         }else{
             $movies = Movie::orderBy('created_at','DESC')->paginate(2);
 
