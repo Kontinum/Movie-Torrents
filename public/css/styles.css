@@ -204,7 +204,7 @@ figure:hover figcaption{
     padding-left: 5px;
 }
 
- .browse-movie-comment{
+ .browse-movie-comment, .browse-movie-recommended{
     margin-bottom: 10px;
 }
 
@@ -215,4 +215,9 @@ figure:hover figcaption{
 .browse-movies{
     margin-top: 10px;
 }
+
+.browse-movie-recommendation{
+    margin-left:25px;
+}
+
 
