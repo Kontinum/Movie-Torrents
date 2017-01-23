@@ -4,10 +4,10 @@
     <div class="browse-movie-wrap">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-lg-offset-0 col-md-4 col-md-offset-0 col-sm-3 col-xs-11 col-xs-offset-1">
                     <img class="browse-movie-poster img-responsive" src="/images/movies/{{$movie->name.'-'.$movie->year.'/'.$movie->pictures->poster_picture}}" alt="{{$movie->name}} poster picture">
                 </div>
-                <div class="col-lg-5">
+                <div class="col-lg-5 col-lg-offset-0 col-md-7 col-sm-7 col-xs-11 col-xs-offset-1">
                     <h1 class="browse-movie-name">{{$movie->name}}</h1><br><br>
                     <h3 class="browse-movie-year">
                         <span class="browse-movie-normal">Year:</span> {{$movie->year}}
@@ -31,22 +31,33 @@
                     </a>
                 </div>
                 <div class="col-lg-3">
-                    Movie recomendation
+                    <div class="row">
+                        <div class="browse-movie-recommendation hidden-md hidden-sm hidden-xs">
+                            <p>Similar movies:</p>
+                            @foreach($recommended_movies as $movie)
+                                <div class="browse-movie-recommended col-lg-6">
+                                    <a href="{{route('browseMovies',['movie_id'=>$movie->id])}}" title="{{$movie->name}}">
+                                        <img class="img-responsive" src="/images/movies/{{$movie->name.'-'.$movie->year.'/'.$movie->pictures->poster_picture}}" alt="">
+                                    </a>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="browse-movie-screenshots">
             <div class="container">
                 <div class="row">
-                    <div class="screenshots col-lg-4">
+                    <div class="screenshots col-lg-4 col-lg-offset-0 col-md-4 col-md-offset-0 col-sm-4">
                         <iframe class="browse-movie-youtube" src="{{$movie->youtube_trailer}}" frameborder="0" allowfullscreen></iframe>
                     </div>
-                    <div class="screenshots col-lg-4">
+                    <div class="screenshots col-lg-4 col-lg-offset-0 col-md-4 col-md-offset-0 col-sm-4">
                         <a href="/images/movies/{{$movie->name.'-'.$movie->year.'/'.$movie->pictures->screenshot1}}" data-lightbox="screenshot" title="Click for larger image">
-                            <img class="browse-movie-screenshot img-responsive" src="/images/movies/{{$movie->name.'-'.$movie->year.'/'.$movie->pictures->screenshot1}}" alt="{{$movie->name}} screenshoot 1">
+                            <img class="browse-movie-screenshot  img-responsive" src="/images/movies/{{$movie->name.'-'.$movie->year.'/'.$movie->pictures->screenshot1}}" alt="{{$movie->name}} screenshoot 1">
                         </a>
                     </div>
-                    <div class="screenshots col-lg-4">
+                    <div class="screenshots col-lg-4 col-lg-offset-0 col-md-4 col-md-offset-0 col-sm-4">
                         <a href="/images/movies/{{$movie->name.'-'.$movie->year.'/'.$movie->pictures->screenshot2}}" data-lightbox="screenshot" title="Click for larger image">
                             <img class="browse-movie-screenshot img-responsive" src="/images/movies/{{$movie->name.'-'.$movie->year.'/'.$movie->pictures->screenshot2}}" alt="{{$movie->name}} screenshoot 1">
                         </a>
@@ -59,56 +70,56 @@
     <div class="browse-movie-info-and-actors">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-8 col-md-12">
                     <h3>Synopsis:</h3>
                     <p>{{$movie->synopsis}}</p>
                     <h3>Movie info:</h3>
                     <div class="row">
-                        <div class="col-lg-3 col-lg-offset-1">
+                        <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 col-xs-4 col-xs-offset-1">
                             <h4>
                                 <i class="browse-movie-info-icon fa fa-lg fa-film" aria-hidden="true"></i> {{$movie->torrent->length}}
                             </h4>
                         </div>
-                        <div class="col-lg-3 col-lg-offset-1">
+                        <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 col-xs-4 col-xs-offset-1">
                             <h4>
                                 <i class="browse-movie-info-icon fa fa-lg fa-file-video-o" aria-hidden="true"></i> {{$movie->torrent->size}}
                             </h4>
                         </div>
-                        <div class="col-lg-3 col-lg-offset-1">
+                        <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 col-xs-4 col-xs-offset-1">
                             <h4>
                                 <i class="browse-movie-info-icon fa fa-lg fa-arrows-alt" aria-hidden="true"></i> {{$movie->torrent->resolution}}
                             </h4>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-3 col-lg-offset-1">
+                        <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 col-xs-4 col-xs-offset-1">
                             <h4>
                                 <i class="browse-movie-info-icon fa fa-lg fa-volume-up" aria-hidden="true"></i> {{$movie->torrent->audio}}
                             </h4>
                         </div>
-                        <div class="col-lg-3 col-lg-offset-1">
+                        <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 col-xs-4 col-xs-offset-1">
                             <h4>
                                 <i class="browse-movie-info-icon fa fa-lg fa-television" aria-hidden="true"></i> {{$movie->torrent->fps}} fps
                             </h4>
                         </div>
-                        <div class="col-lg-3 col-lg-offset-1">
+                        <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 col-xs-4 col-xs-offset-1">
                             <h4>
                                 <i class="browse-movie-info-icon fa fa-lg fa-eye" aria-hidden="true"></i> {{$movie->torrent->pg}}
                             </h4>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-3 col-lg-offset-1">
+                        <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 col-xs-4 col-xs-offset-1">
                             <h4>
                                 <i class="browse-movie-info-icon fa fa-lg fa-calendar" aria-hidden="true"></i> {{$movie->created_at}}
                             </h4>
                         </div>
-                        <div class="col-lg-3 col-lg-offset-1">
+                        <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 col-xs-4 col-xs-offset-1">
                             <h4>
                                 <i class="browse-movie-info-icon fa fa-lg fa-download" aria-hidden="true"></i> {{$movie->downloaded}}
                             </h4>
                         </div>
-                        <div class="col-lg-3 col-lg-offset-1">
+                        <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 col-xs-4 col-xs-offset-1">
                             <h4>
                                 <i class="browse-movie-info-icon fa fa-lg fa-battery-half" aria-hidden="true"></i> {{$movie->torrent->peer_seed}}
                             </h4>
