@@ -7,6 +7,10 @@
     margin-bottom: 0px;
 }
 
+.auth-margin{
+    margin-top: 8px;
+}
+
 .navbar-default .navbar-brand{
     font-size: 30px;
     color: black;
