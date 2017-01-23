@@ -42,7 +42,7 @@
                         </button>
 
                         <!-- Branding Image -->
-                        <a class="navbar-brand" href="{{ url('/') }}">
+                        <a class="navbar-brand {{ (Auth::check()) ? 'auth-margin' : '' }}" href="{{ url('/') }}">
                             mOvIeToRrEnTs
                         </a>
                     </div>
@@ -55,7 +55,7 @@
 
                         <!-- Right Side Of Navbar -->
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="{{route('browseMovies')}}">Browse movies</a></li>
+                            <li><a href="{{route('browseMovies')}}" class="{{ (Auth::check()) ? 'auth-margin' : '' }}">Browse movies</a></li>
                             <!-- Authentication Links -->
                             @if (Auth::guest())
                                 <li><a href="{{ url('/login') }}">Login</a></li>
