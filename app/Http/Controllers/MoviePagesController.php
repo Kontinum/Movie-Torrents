@@ -68,8 +68,9 @@ class MoviePagesController extends Controller
         }
 
         //add pictures for movie
-        Storage::makeDirectory('/images/movies/'.$request->movie_name.'-'.$request->movie_year);
-        $images_path = public_path().'/images/movies/'.$request->movie_name.'-'.$request->movie_year.'/';
+        $movie_name = $this->removeForbiddenDirectoryCharacters($request->movie_name);
+        Storage::makeDirectory('/images/movies/'.$movie_name.'-'.$request->movie_year);
+        $images_path = public_path().'/images/movies/'.$movie_name.'-'.$request->movie_year.'/';
 
         $poster_image = $request->file('poster_image');
         $poster_name = $poster_image->getClientOriginalName();
@@ -88,6 +89,7 @@ class MoviePagesController extends Controller
         $picture->poster_picture = $poster_name;
         $picture->screenshot1 = $screenshot1_name;
         $picture->screenshot2 = $screenshot2_name;
+        $picture->images_directory_name = $movie_name.'-'.$request->movie_year;
 
         $movie->pictures()->save($picture);
 
@@ -132,9 +134,9 @@ class MoviePagesController extends Controller
             return redirect()->route('getMovies')->with(['fail'=>'That movie is not in database']);
         }
 
-        $movie->delete();
+        Storage::deleteDirectory('/images/movies/'.$movie->pictures->images_directory_name);
 
-        Storage::deleteDirectory('/images/movies/'.$movie->name.'-'.$movie->year);
+        $movie->delete();
 
         return redirect()->route('getMovies')->with(['success'=>'Movie '.$movie->name.' has been successfully deleted']);
     }
@@ -180,8 +182,9 @@ class MoviePagesController extends Controller
             return redirect()->route('getMovies')->with(['fail'=>'That movie is no longer in database']);
         }
         //changing directory name if movie name or movie year was edited
+        $movie_name = $this->removeForbiddenDirectoryCharacters($request->movie_name);
         if($movie->name !== $request->movie_name || ''.$movie->year.'' !== $request->movie_year){
-            Storage::move('/images/movies/'.$movie->name.'-'.$movie->year,'/images/movies/'.$request->movie_name.'-'.$request->movie_year);
+            Storage::move('/images/movies/'.$movie->pictures->images_directory_name,'/images/movies/'.$movie_name.'-'.$request->movie_year);
         }
 
         //add movie
@@ -207,12 +210,12 @@ class MoviePagesController extends Controller
         $movie->actors()->sync([$actors_id[0]=>['plays'=>$actors_roles[0]],$actors_id[1]=>['plays'=>$actors_roles[1]],$actors_id[2]=>['plays'=>$actors_roles[2]],$actors_id[3]=>['plays'=>$actors_roles[3]]]);
 
         //edit pictures if exists
-        $images_path = public_path().'/images/movies/'.$request->movie_name.'-'.$request->movie_year.'/';
+        $images_path = public_path().'/images/movies/'.$movie_name.'-'.$request->movie_year.'/';
         $picture = Picture::where('movie_id',$request->movie_id)->first();
 
         if($request->hasFile('poster_image')){
             $current_poster = $movie->pictures->poster_picture;
-            Storage::delete('/images/movies/'.$request->movie_name.'-'.$request->movie_year.'/'.$current_poster);
+            Storage::delete('/images/movies/'.$movie_name.'-'.$request->movie_year.'/'.$current_poster);
 
             $poster_image = $request->file('poster_image');
             $poster_name = $poster_image->getClientOriginalName();
@@ -223,7 +226,7 @@ class MoviePagesController extends Controller
 
         if($request->hasFile('screenshot1_image')){
             $current_screeenshot1 = $movie->pictures->screenshot1;
-            Storage::delete('/images/movies/'.$request->movie_name.'-'.$request->movie_year.'/'.$current_screeenshot1);
+            Storage::delete('/images/movies/'.$movie_name.'-'.$request->movie_year.'/'.$current_screeenshot1);
 
             $screenshot1_image = $request->file('screenshot1_image');
             $screenshot1_name = $screenshot1_image->getClientOriginalName();
@@ -234,7 +237,7 @@ class MoviePagesController extends Controller
 
         if($request->hasFile('screenshot2_image')){
             $current_screeenshot2 = $movie->pictures->screenshot2;
-            Storage::delete('/images/movies/'.$request->movie_name.'-'.$request->movie_year.'/'.$current_screeenshot2);
+            Storage::delete('/images/movies/'.$movie_name.'-'.$request->movie_year.'/'.$current_screeenshot2);
 
             $screenshot2_image = $request->file('screenshot2_image');
             $screenshot2_name = $screenshot2_image->getClientOriginalName();
@@ -242,6 +245,7 @@ class MoviePagesController extends Controller
 
             $picture->screenshot2 = $screenshot2_name;
         }
+        $picture->images_directory_name = $movie_name.'-'.$request->movie_year;
         $movie->pictures()->save($picture);
 
         //edit Torrent information
@@ -331,6 +335,16 @@ class MoviePagesController extends Controller
 
 
         return view('browseMovies')->with('movies',$movies)->with('genres',$genres);
+    }
+
+    //remove forbidden directory characters from movie name and replace them with -
+    public function removeForbiddenDirectoryCharacters($movieName)
+    {
+        $forbiddenCharacters = ["<",">",":",'"',"/","\\","|","?","*"];
+
+        $movieName = str_replace($forbiddenCharacters,"-",$movieName);
+
+        return $movieName;
     }
 }
 
