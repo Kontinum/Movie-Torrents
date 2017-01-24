@@ -34,10 +34,10 @@
                     <div class="row">
                         <div class="browse-movie-recommendation hidden-md hidden-sm hidden-xs">
                             <p>Similar movies:</p>
-                            @foreach($recommended_movies as $movie)
+                            @foreach($recommended_movies as $r_movie)
                                 <div class="browse-movie-recommended col-lg-6">
-                                    <a href="{{route('browseMovies',['movie_id'=>$movie->id])}}" title="{{$movie->name}}">
-                                        <img class="img-responsive" src="/images/movies/{{$movie->name.'-'.$movie->year.'/'.$movie->pictures->poster_picture}}" alt="">
+                                    <a href="{{route('browseMovies',['movie_id'=>$r_movie->id])}}" title="{{$r_movie->name}}">
+                                        <img class="img-responsive" src="/images/movies/{{$r_movie->name.'-'.$r_movie->year.'/'.$r_movie->pictures->poster_picture}}" alt="">
                                     </a>
                                 </div>
                             @endforeach
