@@ -17,7 +17,7 @@ Auth::routes();
 
 //Admin routes
 Route::group(
-    ['prefix'=>'admin','middleware'=>'auth'],function(){
+    ['prefix'=>'admin','middleware'=>['auth','admin']],function(){
 
     //Alows admin to add new user, seach and delete them
     Route::get('/users','UserPagesController@getUsers')->name('getUsers');
