@@ -20,7 +20,7 @@
                         <div class="movie">
                             <a href="{{route('browseMovies',['movie_id'=>$movie->id])}}" class="movie-link">
                                 <figure>
-                                    <img class="img-responsive image-list" src="/images/movies/{{$movie->name .'-'.$movie->year .'/' .$movie->pictures->poster_picture}}" alt="ipman">
+                                    <img class="img-responsive image-list" src="/images/movies/{{$movie->pictures->images_directory_name .'/' .$movie->pictures->poster_picture}}" alt="ipman">
                                     <figcaption class="hidden-sm hidden-xs">
                                         <br><br><br><br><br>
                                         <h4 class="rating">{{$movie->imdb_rating}}/10</h4>
@@ -61,7 +61,7 @@
                         <div class="movie">
                             <a href="{{route('browseMovies',['movie_id'=>$movie->id])}}" class="movie-link">
                                 <figure>
-                                    <img class="img-responsive image-list" src="/images/movies/{{$movie->name .'-'.$movie->year .'/' .$movie->pictures->poster_picture}}" alt="ipman">
+                                    <img class="img-responsive image-list" src="/images/movies/{{$movie->pictures->images_directory_name .'/' .$movie->pictures->poster_picture}}" alt="ipman">
                                     <figcaption class="hidden-sm hidden-xs">
                                         <br><br><br><br><br>
                                         <h4 class="rating">{{$movie->imdb_rating}}/10</h4>

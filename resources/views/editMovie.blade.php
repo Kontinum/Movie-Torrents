@@ -179,7 +179,7 @@
                                 <div class="col-lg-3">
                                     <div class="form-group text-center">
                                         <label for="poster_image">Poster image</label><br>
-                                        <img height="99px" src="{{'/images/movies/'.$movie->name.'-'.$movie->year.'/'.$movie->pictures->poster_picture}}" alt="">
+                                        <img height="99px" src="{{'/images/movies/'.$movie->pictures->images_directory_name.'/'.$movie->pictures->poster_picture}}" alt="">
                                         <input id="poster_image" class="form-control" type="file" name="poster_image" value="{{old('poster_image')}}">
                                     </div>
                                 </div>
@@ -187,7 +187,7 @@
                                 <div class="col-lg-3 col-lg-offset-1">
                                     <div class="form-group">
                                         <label for="screenshot1">Screenshot 1:</label>
-                                        <img class="img-responsive" src="{{'/images/movies/'.$movie->name.'-'.$movie->year.'/'.$movie->pictures->screenshot1}}" alt="">
+                                        <img class="img-responsive" src="{{'/images/movies/'.$movie->pictures->images_directory_name.'/'.$movie->pictures->screenshot1}}" alt="">
                                         <input id="screenshot1" class="form-control" type="file" name="screenshot1_image" value="{{old('screenshot1_image')}}">
                                     </div>
                                 </div>
@@ -195,7 +195,7 @@
                                 <div class="col-lg-3 col-lg-offset-1">
                                     <div class="form-group">
                                         <label for="screenshot2">Screenshot 2:</label>
-                                        <img class="img-responsive" src="{{'/images/movies/'.$movie->name.'-'.$movie->year.'/'.$movie->pictures->screenshot2}}" alt="">
+                                        <img class="img-responsive" src="{{'/images/movies/'.$movie->pictures->images_directory_name.'/'.$movie->pictures->screenshot2}}" alt="">
                                         <input id="screenshot2" class="form-control" type="file" name="screenshot2_image" value="{{old('screenshot2_image')}}">
                                     </div>
                                 </div>

@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-lg-offset-0 col-md-4 col-md-offset-0 col-sm-3 col-xs-11 col-xs-offset-1">
-                    <img class="browse-movie-poster img-responsive" src="/images/movies/{{$movie->name.'-'.$movie->year.'/'.$movie->pictures->poster_picture}}" alt="{{$movie->name}} poster picture">
+                    <img class="browse-movie-poster img-responsive" src="/images/movies/{{$movie->pictures->images_directory_name.'/'.$movie->pictures->poster_picture}}" alt="{{$movie->name}} poster picture">
                 </div>
                 <div class="col-lg-5 col-lg-offset-0 col-md-7 col-sm-7 col-xs-11 col-xs-offset-1">
                     <h1 class="browse-movie-name">{{$movie->name}}</h1><br><br>
@@ -37,7 +37,7 @@
                             @foreach($recommended_movies as $r_movie)
                                 <div class="browse-movie-recommended col-lg-6">
                                     <a href="{{route('browseMovies',['movie_id'=>$r_movie->id])}}" title="{{$r_movie->name}}">
-                                        <img class="img-responsive" src="/images/movies/{{$r_movie->name.'-'.$r_movie->year.'/'.$r_movie->pictures->poster_picture}}" alt="">
+                                        <img class="img-responsive" src="/images/movies/{{$r_movie->pictures->images_directory_name.'/'.$r_movie->pictures->poster_picture}}" alt="">
                                     </a>
                                 </div>
                             @endforeach
@@ -53,13 +53,13 @@
                         <iframe class="browse-movie-youtube" src="{{$movie->youtube_trailer}}" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <div class="screenshots col-lg-4 col-lg-offset-0 col-md-4 col-md-offset-0 col-sm-4">
-                        <a href="/images/movies/{{$movie->name.'-'.$movie->year.'/'.$movie->pictures->screenshot1}}" data-lightbox="screenshot" title="Click for larger image">
-                            <img class="browse-movie-screenshot  img-responsive" src="/images/movies/{{$movie->name.'-'.$movie->year.'/'.$movie->pictures->screenshot1}}" alt="{{$movie->name}} screenshoot 1">
+                        <a href="/images/movies/{{$movie->pictures->images_directory_name.'/'.$movie->pictures->screenshot1}}" data-lightbox="screenshot" title="Click for larger image">
+                            <img class="browse-movie-screenshot  img-responsive" src="/images/movies/{{$movie->pictures->images_directory_name.'/'.$movie->pictures->screenshot1}}" alt="{{$movie->name}} screenshoot 1">
                         </a>
                     </div>
                     <div class="screenshots col-lg-4 col-lg-offset-0 col-md-4 col-md-offset-0 col-sm-4">
-                        <a href="/images/movies/{{$movie->name.'-'.$movie->year.'/'.$movie->pictures->screenshot2}}" data-lightbox="screenshot" title="Click for larger image">
-                            <img class="browse-movie-screenshot img-responsive" src="/images/movies/{{$movie->name.'-'.$movie->year.'/'.$movie->pictures->screenshot2}}" alt="{{$movie->name}} screenshoot 1">
+                        <a href="/images/movies/{{$movie->pictures->images_directory_name.'/'.$movie->pictures->screenshot2}}" data-lightbox="screenshot" title="Click for larger image">
+                            <img class="browse-movie-screenshot img-responsive" src="/images/movies/{{$movie->pictures->images_directory_name.'/'.$movie->pictures->screenshot2}}" alt="{{$movie->name}} screenshoot 1">
                         </a>
                     </div>
                     <hr class="col-lg-12">
