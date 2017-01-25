@@ -6,12 +6,14 @@ use App\Actor;
 use App\Genre;
 use App\Http\Requests\AddMovieFormRequest;
 use App\Http\Requests\EditMovieFormRequest;
+use App\Mail\NewMovieMail;
 use App\Movie;
 use App\Picture;
 use App\Torrent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 
@@ -83,6 +85,8 @@ class MoviePagesController extends Controller
         $torrent->pg = $request->movie_pg;
 
         $movie->torrent()->save($torrent);
+
+        Mail::to('admins@movieTorrents.com')->send(new NewMovieMail($movie));
 
         return redirect()->route('getMovies')->with(['success'=>'Movie '.$request->movie_name.' has been successfully added']);
     }
