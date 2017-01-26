@@ -5,7 +5,7 @@
     <div class="jumbotron">
         <div class="container">
             <h1 class="text-center">1080p HD Movies</h1>
-            <h3 class="text-center">Download fast movies with HD quality</h3>
+            <h3 class="text-center">Download movies with HD quality</h3>
         </div>
     </div>
     <section class="popular-movies-section">
