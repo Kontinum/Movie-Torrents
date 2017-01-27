@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Role;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -105,5 +106,26 @@ class UserPagesController extends Controller
 
         return redirect()->route('getProfile',['user_id'=>$user->id])->with(['success'=>'Your profile has been successfully updated']);
 
+    }
+
+    //User promotion to admin or regular user
+    public function promoteUser($user_id,$role_name)
+    {
+        $user = User::find($user_id);
+
+        if(!$user){
+            return back()->with(['fail'=>'That user is no longer in database']);
+        }
+
+        $role = Role::where('name',$role_name)->get();
+
+        $role_id="";
+        foreach ($role as $item) {
+            $role_id = $item->id;
+        }
+
+        $user->roles()->sync([$role_id]);
+
+        return back()->with(['success'=>'Status of:  '.$user->name.' has been successfully changed to '.$role_name]);
     }
 }
