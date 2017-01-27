@@ -52,6 +52,17 @@
                                 <a style="line-height: 45px" class="pull-right" href="{{route('deleteUser',['user_id'=>$user->id])}}" title="Delete user">
                                     <i class="fa fa-lg fa-trash list-icons" aria-hidden="true"></i>
                                 </a>
+                                @foreach($user->roles()->get() as $role)
+                                    @if($role->name == "admin")
+                                        <a style="line-height: 45px;margin-right: 5px" class="pull-right" href="{{route('promoteUser',['user_id'=>$user->id,'role_name'=>'regular user'])}}" title="Remove admin privilege">
+                                            <i class="fa fa-lg fa-level-down" aria-hidden="true"></i>
+                                        </a>
+                                        @else
+                                        <a style="line-height: 45px;margin-right: 5px" class="pull-right" href="{{route('promoteUser',['user_id'=>$user->id,'role_name'=>'admin'])}}" title="Promote to admin">
+                                            <i class="fa fa-lg fa-level-up" aria-hidden="true"></i>
+                                        </a>
+                                    @endif
+                                @endforeach
                             @endif
                         </li>
                     @endforeach
