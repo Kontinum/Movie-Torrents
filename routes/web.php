@@ -28,6 +28,9 @@ Route::group(
     //Search users
     Route::get('/users/search','UserPagesController@getSearchUsers')->name('getSearchUsers');
 
+    //Promote user
+    Route::get('/user/{user_id}/{role_name}/promote','UserPagesController@promoteUser')->name('promoteUser');
+
     //Delete user
     Route::get('/user/{user_id}/delete','UserPagesController@deleteUser')->name('deleteUser');
 
