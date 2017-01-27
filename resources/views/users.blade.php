@@ -58,6 +58,14 @@
                             </div>
 
                             <div class="form-group">
+                                <div class="checkbox col-lg-offset-4 col-md-offset-4">
+                                    <label>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="admin">Admin
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
                                     <button type="submit" class="btn btn-primary">
                                         Add new user
