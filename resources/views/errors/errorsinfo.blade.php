@@ -1,9 +1,9 @@
 @if(count($errors) > 0)
-    @foreach($errors->all() as $error)
-        <div class="info-box fail">
-           <li>{{$error}}</li>
-        </div>
-    @endforeach
+    <div class="info-box fail">
+        @foreach($errors->all() as $error)
+            <li>{{$error}}</li>
+        @endforeach
+    </div>
 @endif
 @if(Session::has('success'))
     <div class="info-box success">
