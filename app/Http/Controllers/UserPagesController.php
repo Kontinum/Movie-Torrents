@@ -35,6 +35,12 @@ class UserPagesController extends Controller
 
         $user->save();
 
+        $user->roles()->attach(2);
+
+        if($request->admin){
+            $user->roles()->sync([1]);
+        }
+
         return redirect()->back()->with(['success'=>'User with name ' .$request['name'].' has been successfully added']);
     }
 
