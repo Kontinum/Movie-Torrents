@@ -16,9 +16,12 @@ class admin
      */
     public function handle($request, Closure $next)
     {
-        $role = Auth::user()->roles()->get();
-        if ($role->isEmpty()) {
-            return redirect()->route('home');
+        $roles = Auth::user()->roles()->get();
+
+        foreach ($roles as $role) {
+            if ($role->name !== 'admin') {
+                return redirect()->route('home');
+            }
         }
         return $next($request);
     }
