@@ -1,8 +1,7 @@
 # Movie Torrents
 
 ## About project
-This is a hobby project I made using laravel for practice purpose and also to show to my future employers my current knowledge of laravel framework. Project is not yet completed, I want to add some more functionality, but over 90% of functionality that I have planned at the beginning of this project is done. Also I have some issues that I need to fix. I used MySQL for database and Bootstrap for CSS.
-
+MovieTorrents is a bad-looking clone of a very popular YTS movie torrent site. There are two types of users: administrator and regular. Regular users can login, register, search movies,leave a comment etc.. Administrator can add/edit/delete movies, actors, genres, create new user, promote other users etc..
 ## Database diagram
 [![MovieTorrents Diagram.png](https://s26.postimg.org/glguitk7d/Movie_Torrents_Diagram.png)](https://postimg.org/image/f6f9u3j45/)
 
